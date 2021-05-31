@@ -1,9 +1,10 @@
+import Commits from "./components/Commits";
 
 
 function App() {
   return (
     <div >
-   START
+   <Commits />
     </div>
   );
 }
