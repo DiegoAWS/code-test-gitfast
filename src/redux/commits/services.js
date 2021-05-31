@@ -1,9 +1,9 @@
+import axios from "axios"
+
 const apiURL = 'https://api.github.com/repos/DiegoCuba/code-test-gitfast/commits'
 
-export const getAllCommits = () => fetch(apiURL, {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json'
-    }
-}).then(response => response.json())
+export const getAllCommits = () => axios
+    .get(apiURL)
+    .then(data => data.data)
     .catch(error => { throw error })
+
