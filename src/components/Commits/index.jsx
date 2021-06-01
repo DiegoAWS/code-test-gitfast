@@ -1,26 +1,26 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getCommits } from "../../redux/commits/actions";
-import OneCommit from "./OneCommit";
+import React, { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { getCommits } from "../../redux/commits/actions"
+import OneCommit from "./OneCommit"
 import loadingIcon from '../../assets/imgs/loadingIcon.gif'
 
 export default function Commits() {
-  const dispatch = useDispatch();
-  const commits = useSelector((state) => state.commits.commits);
-  const loading = useSelector((state) => state.commits.loading);
-  const errors = useSelector((state) => state.commits.errors);
+  const dispatch = useDispatch()
+  const commits = useSelector((state) => state.commits.commits)
+  const loading = useSelector((state) => state.commits.loading)
+  const errors = useSelector((state) => state.commits.errors)
 
   useEffect(() => {
-    dispatch(getCommits());
+    dispatch(getCommits())
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   console.log({
     commits,
     loading,
     errors,
-  });
+  })
 
   return <div className='p-5'>
     <div className='d-flex align-items-center'>
@@ -36,11 +36,11 @@ export default function Commits() {
 
       <div className='m-4 w-100 border border-white rounded-3'>
 
-        {commits?.length === 0 && <div className='text-light'>No commits availables</div>}
+        {commits?.length === 0 && !loading && <div className='text-light'>No commits availables</div>}
         {commits && Array.isArray(commits) && commits.map(item => (
           <OneCommit key={item.sha} commit={item} />
         ))}
       </div>
     </div>
-  </div>;
+  </div>
 }

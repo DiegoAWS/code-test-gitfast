@@ -5,19 +5,10 @@ import {
 } from "react-router-dom";
 import NavbarComponent from "./components/Navbar";
 import routes from "./constants/routes";
-import styled from 'styled-components'
-
-const MainApp=styled.div`
-height:100vh;
-background-color:black;
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
-`
 
 function App() {
   return (
-    <MainApp>
+    <div style={{ backgroundColor: 'black' }}>
       <Router>
         <NavbarComponent />
         <Switch>
@@ -32,7 +23,7 @@ function App() {
         </Switch>
 
       </Router>
-    </MainApp>
+    </div>
   );
 }
 
