@@ -1,4 +1,4 @@
-import Commits from "../components/Commits"
+import Commits from "../components/Commits/index"
 import LandingPage from "../components/LandingPage"
 
 const routes=[

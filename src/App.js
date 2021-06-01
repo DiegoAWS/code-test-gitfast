@@ -5,21 +5,12 @@ import {
 } from "react-router-dom";
 import NavbarComponent from "./components/Navbar";
 import routes from "./constants/routes";
-import styled from 'styled-components'
-import landingBackground from './assets/imgs/landingBackground.jpg'
-
-const MainApp=styled.div`
-height:100vh;
-background-color:black;// fallback
-background-image:url(${landingBackground});
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
-`
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <MainApp>
+    <div style={{ backgroundColor: 'black', minHeight: '100vh' }}>
       <Router>
         <NavbarComponent />
         <Switch>
@@ -34,7 +25,8 @@ function App() {
         </Switch>
 
       </Router>
-    </MainApp>
+      <ToastContainer />
+    </div>
   );
 }
 
