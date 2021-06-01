@@ -1,7 +1,8 @@
-import { GET_COMMITS_REQUEST} from './types'
+import { GET_COMMITS_REQUEST } from './types'
 
-export const getCommits=()=>{
+export const getCommits = (page) => {
     return {
-        type:GET_COMMITS_REQUEST
+        type: GET_COMMITS_REQUEST,
+        payload: page
     }
 }

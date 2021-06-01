@@ -1,9 +1,10 @@
-import {  GET_COMMITS_REQUEST, GET_COMMITS_SUCCESS, GET_COMMITS_FAILED } from './types'
+import { GET_COMMITS_REQUEST, GET_COMMITS_SUCCESS, GET_COMMITS_FAILED } from './types'
 
 const initialCommitsState = {
     commits: [],
     loading: false,
-    errors: null
+    errors: null,
+    links: ''
 }
 
 const commitsReducer = (state = initialCommitsState, action) => {
@@ -17,17 +18,18 @@ const commitsReducer = (state = initialCommitsState, action) => {
         case GET_COMMITS_SUCCESS:
             return {
                 ...state,
-                loading:false,
-                commits: action.commits
+                loading: false,
+                commits: action.commits,
+                links: action.links
             }
 
-            case GET_COMMITS_FAILED:
+        case GET_COMMITS_FAILED:
             return {
                 ...state,
-                loading:false,
+                loading: false,
                 errors: action.message
             }
-            
+
         default:
             return state
     }
