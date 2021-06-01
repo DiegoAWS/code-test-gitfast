@@ -20,7 +20,7 @@ export default function Commits() {
 
   return <div className='p-5'>
 
-    <Pagination links={links} loading={loading} setPage={setPage} />
+    <Pagination links={links} loading={loading} page={page} setPage={setPage} />
 
     <div className='d-flex align-items-center'>
       <h2 className='m-0 text-light'>Commits</h2>
