@@ -1,9 +1,9 @@
 import { GET_COMMITS_REQUEST, GET_COMMITS_SUCCESS, GET_COMMITS_FAILED } from './types'
+import { toast } from 'react-toastify';
 
 const initialCommitsState = {
     commits: [],
     loading: false,
-    errors: null,
     links: ''
 }
 
@@ -24,10 +24,10 @@ const commitsReducer = (state = initialCommitsState, action) => {
             }
 
         case GET_COMMITS_FAILED:
+            toast.error(action.message)
             return {
                 ...state,
-                loading: false,
-                errors: action.message
+                loading: false
             }
 
         default:
