@@ -4,6 +4,10 @@ import formatDistance from 'date-fns/formatDistance'
 import isValid from 'date-fns/isValid';
 import format from 'date-fns/format';
 import gitHubLogo from '../../assets/imgs/gitHubLogo.svg'
+import clipboardIcon from '../../assets/imgs/clipboardIcon.svg'
+import { Button, ButtonGroup } from 'reactstrap';
+import copy from "copy-to-clipboard";
+import { toast } from 'react-toastify';
 
 export default function OneCommit({ commit }) {
     const [openCollapse, setOpenCollapse] = useState(false);
@@ -20,6 +24,18 @@ export default function OneCommit({ commit }) {
     const commitDate = isValid(new Date(commit?.commit?.author?.date))
         ? new Date(commit?.commit?.author?.date) : new Date()
     const timeDistance = 'Commited ' + formatDistance(commitDate, new Date()) + ' ago - ' + format(commitDate, 'PPpp')
+
+
+
+    const verifiedCommit = commit?.commit?.verification?.verified
+
+    const copyShaToClipboard = () => {
+        copy(commit?.sha, {
+            onCopy: () => {
+                toast.success('Commit SHA copied')
+            }
+        })
+    }
 
 
     return (
@@ -42,7 +58,16 @@ export default function OneCommit({ commit }) {
                     <div className='ms-2' id='toolTipTarget'>{timeDistance}</div>
                 </div>
             </div>
-            <div>Right Side</div>
+            <div className='d-flex align-items-center'>
+                {verifiedCommit && <div className='rounded-pill border border-success text-success px-1 '> Verified</div>}
+                <ButtonGroup className='ms-2' size="sm">
+                    <Button className='bg-dark text-primary' onClick={copyShaToClipboard}>
+                        <img alt='Copy to clipboard SHA' src={clipboardIcon} width='15px' height='15px' />
+                    </Button>
+                    <Button className='bg-dark text-primary'>Middle</Button>
+                </ButtonGroup>
+
+            </div>
         </div>
     )
 }

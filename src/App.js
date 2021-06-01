@@ -5,10 +5,12 @@ import {
 } from "react-router-dom";
 import NavbarComponent from "./components/Navbar";
 import routes from "./constants/routes";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <div style={{ backgroundColor: 'black' }}>
+    <div style={{ backgroundColor: 'black', minHeight: '100vh' }}>
       <Router>
         <NavbarComponent />
         <Switch>
@@ -23,6 +25,7 @@ function App() {
         </Switch>
 
       </Router>
+      <ToastContainer />
     </div>
   );
 }
