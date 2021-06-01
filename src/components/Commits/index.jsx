@@ -1,28 +1,27 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getCommits } from "../../redux/commits/actions"
 import OneCommit from "./OneCommit"
 import loadingIcon from '../../assets/imgs/loadingIcon.gif'
+import Pagination from "../Generics/Pagination"
 
 export default function Commits() {
+  const [page, setPage] = useState(1)
   const dispatch = useDispatch()
   const commits = useSelector((state) => state.commits.commits)
   const loading = useSelector((state) => state.commits.loading)
-  const errors = useSelector((state) => state.commits.errors)
+  const links = useSelector((state) => state.commits.links)
 
   useEffect(() => {
-    dispatch(getCommits())
+    dispatch(getCommits(page))
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  console.log({
-    commits,
-    loading,
-    errors,
-  })
+  }, [page])
 
   return <div className='p-5'>
+
+    <Pagination links={links} loading={loading} setPage={setPage} />
+
     <div className='d-flex align-items-center'>
       <h2 className='m-0 text-light'>Commits</h2>
       {
@@ -42,5 +41,6 @@ export default function Commits() {
         ))}
       </div>
     </div>
+
   </div>
 }
