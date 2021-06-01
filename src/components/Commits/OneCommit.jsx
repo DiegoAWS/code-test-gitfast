@@ -36,7 +36,10 @@ export default function OneCommit({ commit }) {
             }
         })
     }
+    const reducedSha = commit?.sha?.substring(0, 7)
 
+    const commitURL = commit?.html_url
+    const treeURL = commitURL.replace('/commit/', '/tree/')
 
     return (
         <div className='d-md-flex border-bottom border-white p-2'>
@@ -64,10 +67,15 @@ export default function OneCommit({ commit }) {
                     <Button className='bg-dark text-primary' onClick={copyShaToClipboard}>
                         <img alt='Copy to clipboard SHA' src={clipboardIcon} width='15px' height='15px' />
                     </Button>
-                    <Button className='bg-dark text-primary'>Middle</Button>
+                    <Button className='bg-dark text-primary fs-6' href={commitURL}>{reducedSha}</Button>
                 </ButtonGroup>
-
+                <Button size="sm"
+                    className='bg-dark text-primary fs-6 ms-2'
+                    href={treeURL}
+                    title='Browse the repository at this point in the history'
+                >{'<>'}</Button>
             </div>
         </div>
     )
 }
+
