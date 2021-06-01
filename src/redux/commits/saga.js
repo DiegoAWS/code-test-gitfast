@@ -7,10 +7,11 @@ import { GET_COMMITS_REQUEST, GET_COMMITS_SUCCESS, GET_COMMITS_FAILED } from './
 function* fetchCommits(action) {
 
     try {
-        const commits = yield call(getAllCommits)
+        const commitsRequest = yield call(getAllCommits, action.payload)
         yield put({
             type: GET_COMMITS_SUCCESS,
-            commits: commits
+            commits: commitsRequest.data,
+            links: commitsRequest.headers.link
         })
     }
     catch (e) {
@@ -21,8 +22,8 @@ function* fetchCommits(action) {
     }
 }
 
-function* commitsSaga(){
-    yield takeEvery(GET_COMMITS_REQUEST,fetchCommits)
+function* commitsSaga() {
+    yield takeEvery(GET_COMMITS_REQUEST, fetchCommits)
 }
 
 export default commitsSaga
