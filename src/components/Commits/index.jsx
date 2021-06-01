@@ -20,7 +20,7 @@ export default function Commits() {
 
   return <div className='p-5'>
 
-    <Pagination links={links} loading={loading} setPage={setPage} />
+
 
     <div className='d-flex align-items-center'>
       <h2 className='m-0 text-light'>Commits</h2>
@@ -29,6 +29,7 @@ export default function Commits() {
           <img alt='' src={loadingIcon} width='20px' height='20px' />
         </div>
       }
+      <Pagination links={links} loading={loading} page={page} setPage={setPage} />
     </div>
 
     <div className='d-flex justify-content-center'>
@@ -41,6 +42,6 @@ export default function Commits() {
         ))}
       </div>
     </div>
-
+    <Pagination links={links} loading={loading} page={page} setPage={setPage} />
   </div>
 }

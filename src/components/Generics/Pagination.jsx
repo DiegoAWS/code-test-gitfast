@@ -19,7 +19,7 @@ export default function Pagination({ links, loading, page, setPage }) {
     }, {})
     return (
         <>
-            {paginationData && <div className='d-flex justify-content-center'>
+            {links && <div className='flex-grow-1 d-flex justify-content-end '>
                 <ButtonGroup className='ms-2' size="sm">
                     <Button disabled={loading || !paginationData?.first} className='bg-dark text-primary fs-6' onClick={() => { setPage(paginationData?.first) }} > First </Button>
                     <Button disabled={loading || !paginationData?.prev} className='bg-dark text-primary fs-6' onClick={() => { setPage(paginationData?.prev) }} > Prev </Button>
