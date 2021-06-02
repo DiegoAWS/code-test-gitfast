@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import {
     Collapse,
     Navbar,
-    NavbarToggler,
     NavbarBrand,
     Nav,
     NavItem
 } from 'reactstrap';
 import styled from 'styled-components';
 import gitHubLogo from '../assets/imgs/gitHubLogo.svg'
+import menuIcon from '../assets/imgs/menuIcon.svg'
 import routes from '../constants/routes';
 
 const TransparentNavbar = styled(Navbar)`
@@ -29,13 +29,13 @@ const GitHubLogo = styled.img`
     }
     
 `
-const CustomNavLink= styled(Link)`
+const CustomNavLink = styled(Link)`
 
 
 text-decoration:none;
 margin:5px;
 
-` 
+`
 
 const NavbarComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +48,7 @@ const NavbarComponent = () => {
                 <NavbarBrand href="https://github.com/DiegoCuba/code-test-gitfast#readme">
                     <GitHubLogo src={gitHubLogo} alt='GitHubLogo' title='GitHub Code' />
                 </NavbarBrand>
-                <NavbarToggler onClick={toggle} />
+                <img alt='' src={menuIcon} className='border rounded btn p-0' onClick={toggle} width='30px' />
                 <Collapse className="justify-content-end" isOpen={isOpen} navbar>
 
                     <Nav navbar>
@@ -56,7 +56,7 @@ const NavbarComponent = () => {
                         {routes.map(item => (
                             <NavItem key={item.path}>
 
-                                <CustomNavLink  to={item.path}>{item.main}</CustomNavLink>
+                                <CustomNavLink to={item.path}>{item.main}</CustomNavLink>
 
                             </NavItem>
                         ))}
