@@ -1,5 +1,7 @@
-import Commits from "../modules/commits/index"
-import LandingPage from "../modules/landing/LandingPage"
+import Commits from "../modules/commits"
+import LandingPage from "../modules/landing"
+import Profile from "../modules/profile"
+
 
 const routes = [
     {
@@ -13,6 +15,12 @@ const routes = [
         exact: true,
         main: 'Commits',
         component: Commits
+    },
+    {
+        path: "/profile",
+        exact: true,
+        main: 'Profile',
+        component: Profile
     },
 ]
 
