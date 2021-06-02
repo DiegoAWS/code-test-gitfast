@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { getCommits } from "../../redux/commits/actions"
 import OneCommit from "./OneCommit"
 import loadingIcon from '../../assets/imgs/loadingIcon.gif'
-import Pagination from "../Generics/Pagination"
+import Pagination from "../../components/Pagination"
 
 export default function Commits() {
   const [page, setPage] = useState(1)
