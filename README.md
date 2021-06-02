@@ -28,13 +28,13 @@ When you are finished please email me with a link to the repo. If you have any q
 
 ## Further recomendations:
 
-1 Change tunk by saga
+1. Change tunk by saga
 
-2 Create at least 3 types of action per model plus one loading type for each model
+2. Create at least 3 types of action per model plus one loading type for each model
 
-3 Trigger the loading whenever you are looking for some data and turn it off when the data reaches the front
+3. Trigger the loading whenever you are looking for some data and turn it off when the data reaches the front
 
-4 Use that loading in each component to tell the user that you are looking for something from that model or view.
+4. Use that loading in each component to tell the user that you are looking for something from that model or view.
 
 5. Add an error type and also show it in each view (or it can be a global notification)
 
