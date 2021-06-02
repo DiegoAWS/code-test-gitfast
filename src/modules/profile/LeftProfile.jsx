@@ -3,17 +3,14 @@ import usersIcon from '../../assets/imgs/usersIcon.svg'
 import styled from 'styled-components'
 
 const LeftProfileContainer = styled.div`
-    width:25vw;
-    margin-right:100px;
+    width:30vw;
 
     @media (max-width: 992px) { 
-        width:35vw;
-        margin-right:50px;
+        width:40vw;
     }
 
     @media (max-width: 768px) { 
         width:100%;
-        margin-right:0px;
     }
 
 `

@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProfile } from '../../redux/profile/actions'
 import LeftProfile from './LeftProfile'
-
-import loadingIcon from '../../assets/imgs/loadingIcon.gif'
 import RightProfile from './RightProfile'
+import loadingIcon from '../../assets/imgs/loadingIcon.gif'
+
 
 export default function Profile() {
     const dispatch = useDispatch()
@@ -19,7 +19,7 @@ export default function Profile() {
     }, [])
 
     return (
-        <div className='p-4 m-md-5 p-lg-5 text-white'>
+        <div className='p-4  p-lg-5 text-white'>
             <div className='d-flex'>
                 <h2>Profile</h2>
                 {
