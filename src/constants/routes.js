@@ -1,18 +1,18 @@
-import Commits from "../components/Commits/index"
-import LandingPage from "../components/LandingPage"
+import Commits from "../modules/commits/index"
+import LandingPage from "../modules/landing/LandingPage"
 
-const routes=[
+const routes = [
     {
         path: "/",
         exact: true,
-        main:  'Home',
-        component:LandingPage
+        main: 'Home',
+        component: LandingPage
     },
     {
         path: "/commits",
         exact: true,
-        main:  'Commits',
-        component:Commits
+        main: 'Commits',
+        component: Commits
     },
 ]
 
