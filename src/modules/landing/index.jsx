@@ -1,5 +1,6 @@
 import React from 'react'
 import landingBackground from '../../assets/imgs/landingBackground.jpg'
+
 export default function LandingPage() {
     return (
         <div className='text-light'>
