@@ -31,16 +31,16 @@ export default function OneCommit({ commit }) {
 
     const sha = commit?.sha
 
+    const successShaCopiedNotification = (shaCopied) => {
+        toast.success(() => <div>
+            <h5 className='text-center'>Commit SHA copied !!!</h5>
+            <div className='rounded bg-primary text-white text-center' style={{ fontSize: '10px' }}>{sha}</div>
+        </div>)
+    }
     const copyShaToClipboard = () => {
-        console.log(sha)
-        copy(sha, {
-            onCopy: () => {
-                toast.success(() => <div>
-                    <h5 className='text-center'>Commit SHA copied !!!</h5>
-                    <div className='rounded bg-primary text-white text-center' style={{ fontSize: '10px' }}>{sha}</div>
-                </div>)
-            }
-        })
+
+        copy(sha) && successShaCopiedNotification(sha)
+
     }
     const reducedSha = sha?.substring(0, 7)
 
