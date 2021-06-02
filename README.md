@@ -1,5 +1,17 @@
 # Test Code Project for GitFast [![example workflow](https://github.com/DiegoCuba/code-test-gitfast/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://code-test-gitfast.web.app/) [![GitHub last commit](https://img.shields.io/github/last-commit/DiegoCuba/code-test-gitfast.svg?style=flat)](https://GitHub.com/DiegoCuba/code-test-gitfast) [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/DiegoCuba/code-test-gitfast)](https://GitHub.com/DiegoCuba/code-test-gitfast)
 
+## Structure
+
+- [Problem to solve](#problem-to-solve)
+  - [Objective](#objective)
+  - [Requirements](#requirements)
+  - [Routes](#routes)
+- [Further recomendations](#further-recomendations)
+- [Deployed Project](#deployed-project)
+- [Runing the project locally](#runing-the-project-locally)
+
+<img alt="Landing Background" src="src/assets/imgs/landingBackground.jpg" width="100%" />
+
 ## Problem to solve:
 
 ### Objective
@@ -17,7 +29,7 @@ Your GitHub repository must be public - this will allow us to look at it and ver
 
 The style of the page is up to you. Typically we use something like Bootstrap (http://getbootstrap.com) for a lot of our projects, then style it to meet the business want or need later on.
 
-### The app should have at least 3 routes.
+### Routes
 
 - One route for the repo/commits,
 - One route should contain profile information, and
@@ -26,7 +38,7 @@ The style of the page is up to you. Typically we use something like Bootstrap (h
 You MUST provide instructions in the README on how to install and run your project. We will not infer anything, and if you do not include these instructions, we will reject your submission.
 When you are finished please email me with a link to the repo. If you have any questions let me know.
 
-## Further recomendations:
+## Further recomendations
 
 1. Change tunk by saga
 
