@@ -48,7 +48,7 @@ const NavbarComponent = () => {
                 <NavbarBrand href="https://github.com/DiegoCuba/code-test-gitfast#readme">
                     <GitHubLogo src={gitHubLogo} alt='GitHubLogo' title='GitHub Code' />
                 </NavbarBrand>
-                <img alt='' src={menuIcon} className='border rounded btn p-0' onClick={toggle} width='30px' />
+                <img alt='' src={menuIcon} className='border rounded btn p-0  d-md-none' onClick={toggle} width='30px' />
                 <Collapse className="justify-content-end" isOpen={isOpen} navbar>
 
                     <Nav navbar>
