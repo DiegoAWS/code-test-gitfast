@@ -1,4 +1,4 @@
-# Test Code Project for GitFast [![example workflow](https://github.com/DiegoCuba/code-test-gitfast/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://code-test-gitfast.web.app/) [![GitHub last commit](https://img.shields.io/github/last-commit/DiegoCuba/code-test-gitfast.svg?style=flat)](https://GitHub.com/DiegoCuba/code-test-gitfast) [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/DiegoCuba/code-test-gitfast)](https://GitHub.com/DiegoCuba/code-test-gitfast)
+# Test Code Project for GitFast [![example workflow](https://github.com/DiegoCuba/code-test-gitfast/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://code-test-gitfast.web.app/) [![GitHub last commit](https://img.shields.io/github/last-commit/DiegoCuba/code-test-gitfast.svg?style=flat)](https://GitHub.com/DiegoCuba/code-test-gitfast)
 
 ## Structure
 
