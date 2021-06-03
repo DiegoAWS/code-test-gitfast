@@ -5,6 +5,9 @@ import { getRepositories } from '../../redux/repositories/actions'
 import SpinnerLoading from '../../components/SpinnerLoading'
 import { includes } from 'ramda'
 import OneRepository from './OneRepository'
+import Pagination from '../../components/Pagination'
+import TypeSelector from './TypeSelector'
+import SortSelector from './SortSelector'
 
 
 const clearText = (dirtyText) => {
@@ -14,8 +17,11 @@ const clearText = (dirtyText) => {
 
 export default function Settings() {
     const [page, setPage] = useState(1)
-    const [userNameInput, setUserNameInput] = useState('DiegoCuba')
     const [searchingText, setSearchingText] = useState('DiegoCuba')
+    const [typeSearch, setTypeSearch] = useState('owner')
+    const [sortSearch, setSortSearch] = useState('full_name')
+    const [userNameInput, setUserNameInput] = useState('DiegoCuba')
+
 
 
     const dispatch = useDispatch()
@@ -33,16 +39,16 @@ export default function Settings() {
             dispatch(getRepositories(
                 {
                     userName: searchingText,
-                    page
+                    type: typeSearch,
+                    page,
+                    sort: sortSearch
                 }
             ))
 
         }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [page, searchingText])
-
-    console.log({ errors, repositories })
+    }, [page, searchingText, typeSearch, sortSearch])
 
     const timeout = useRef();
 
@@ -98,7 +104,16 @@ export default function Settings() {
                     <div className='text-primary'>{searchingText}</div>
                     <SpinnerLoading loading={loading} />
                 </div>
+                <div className='d-flex mx-3'>
+                    <TypeSelector typeSearch={typeSearch} setTypeSearch={setTypeSearch} />
+                </div>
+                <div className='d-flex mx-3'>
+                    <SortSelector sortSearch={sortSearch} setSortSearch={setSortSearch} />
+                </div>
             </div>
+
+            <Pagination links={links} loading={loading} page={page} setPage={setPage} />
+
             <div>
 
                 {error404 && <div>UserName not Found</div>}
@@ -107,6 +122,7 @@ export default function Settings() {
                         <OneRepository key={repo.id} repo={repo} />
                     ))}
                 </div>
+                <Pagination links={links} loading={loading} page={page} setPage={setPage} />
             </div>
         </div>
     )
