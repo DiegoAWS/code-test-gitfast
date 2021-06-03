@@ -13,7 +13,8 @@ const repositoriesReducer = (state = initialRepositoriesState, action) => {
         case GET_REPOSITORIES_REQUEST:
             return {
                 ...state,
-                loading: true
+                loading: true,
+                errors: null
             }
         case GET_REPOSITORIES_SUCCESS:
             return {

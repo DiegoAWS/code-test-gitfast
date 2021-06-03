@@ -1,15 +1,14 @@
-import axios from "axios"
 
-const apiURL = 'https://api.github.com/users/DiegoCuba/repos'
+import axiosInstance from "../../helpers/axios"
 
-export const getAllRepositories = (page = 1) => axios
-    .get(apiURL, {
-        params: {
-            page
-        },
-        headers: {
-            Accept: 'application/vnd.github.inertia-preview+json',
-        }
-    })
-    .catch(error => { throw error })
+export const getAllRepositories = ({ userName = 'DiegoCuba', page = 1 }) => {
 
+    const apiURL = `/users/${userName}/repos`
+    return axiosInstance
+        .get(apiURL, {
+            params: {
+                page
+            }
+        })
+        .catch(error => { throw error })
+}

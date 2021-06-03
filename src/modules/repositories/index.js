@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Input } from 'reactstrap'
 import { getRepositories } from '../../redux/repositories/actions'
 import SpinnerLoading from '../../components/SpinnerLoading'
+import { includes } from 'ramda'
 
 
 const clearText = (dirtyText) => {
@@ -14,24 +15,33 @@ export default function Settings() {
     const [page, setPage] = useState(1)
     const [userNameInput, setUserNameInput] = useState('DiegoCuba')
     const [searchingText, setSearchingText] = useState('DiegoCuba')
+
+
     const dispatch = useDispatch()
+
     const repositories = useSelector((state) => state.repositories.repositories)
     const loading = useSelector((state) => state.repositories.loading)
+    const errors = useSelector((state) => state.repositories.errors)
+    const error404 = errors && includes('404', errors) // UserName not Found
+
     const links = useSelector((state) => state.repositories.links)
 
     useEffect(() => {
         if (searchingText)  //If there is no UserName to search, avoid the unnecessary search
         {
-            dispatch(getRepositories(page))
-
-            console.log('SEARCHING...', searchingText)
+            dispatch(getRepositories(
+                {
+                    userName: searchingText,
+                    page
+                }
+            ))
 
         }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [page, searchingText])
 
-    // console.log({ repositories, loading, links })
+    console.log({ errors, repositories })
 
     const timeout = useRef();
 
@@ -62,15 +72,18 @@ export default function Settings() {
 
     }
 
+    const colorInputBorder = error404
+        ? 'border-danger'
+        : userNameInput === searchingText
+            ? 'border-light'
+            : 'border-primary'
 
     return (
         <div className='text-white'>
             <div className='d-flex align-items-center p-2'>
                 <div className='w-75'>
                     <Input type="text"
-                        className={userNameInput === searchingText
-                            ? 'border border-3 shadow-none border-light'
-                            : 'border border-3 shadow-none border-primary'}
+                        className={`border border-3 shadow-none ${colorInputBorder}`}
                         value={userNameInput}
                         aria-label='UserName to search'
                         placeholder='UserName to search'
@@ -84,6 +97,10 @@ export default function Settings() {
                     <div className='text-primary'>{searchingText}</div>
                     <SpinnerLoading loading={loading} />
                 </div>
+            </div>
+            <div>
+
+                {error404 && <div>UserName not Found</div>}
             </div>
         </div>
     )

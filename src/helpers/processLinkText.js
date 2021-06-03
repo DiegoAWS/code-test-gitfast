@@ -18,12 +18,11 @@ const reducerFunc = (acc, item) => {
 
 /**
  * 
- * Function who convert the links headers into a readable object of pairs relation:pageNumber
+ * @desc Function who convert the links headers into a readable object of pairs relation:pageNumber
  * 
- * USED for paginations
  * 
  * @param {string} links coming from response.headers.links of GitHub API
- * @returns {relation:pageNumber, relation2:pageNumber, ....}
+ * @returns An Object of {relation:pageNumber, relation2:pageNumber, ....}
  */
 const processLinkText = (links) => composeFp(
 

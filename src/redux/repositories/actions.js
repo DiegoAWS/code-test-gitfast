@@ -1,8 +1,8 @@
 import { GET_REPOSITORIES_REQUEST } from './types'
 
-export const getRepositories = (page) => {
+export const getRepositories = ({ userName, page }) => {
     return {
         type: GET_REPOSITORIES_REQUEST,
-        payload: page
+        payload: { userName, page }
     }
 }

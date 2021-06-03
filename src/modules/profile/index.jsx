@@ -14,7 +14,6 @@ export default function Profile() {
 
 
     useEffect(() => {
-        console.log('here')
         dispatch(getProfile())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])

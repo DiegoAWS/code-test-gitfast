@@ -1,7 +1,7 @@
 import Commits from "../modules/commits"
 import LandingPage from "../modules/landing"
 import Profile from "../modules/profile"
-import Settings from "../modules/settings"
+import Settings from "../modules/repositories"
 
 
 const routes = [
