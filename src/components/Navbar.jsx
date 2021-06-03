@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
     Collapse,
@@ -38,6 +39,10 @@ margin:5px;
 `
 
 const NavbarComponent = () => {
+    const repo = useSelector((state) => state?.repo?.repo)
+    const user = useSelector((state) => state?.repo?.user)
+
+
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
@@ -45,8 +50,9 @@ const NavbarComponent = () => {
     return (
         <div>
             <TransparentNavbar color="dark" expand="md">
-                <NavbarBrand href="https://github.com/DiegoCuba/code-test-gitfast#readme">
+                <NavbarBrand className='d-flex' href="https://github.com/DiegoCuba/code-test-gitfast#readme">
                     <GitHubLogo src={gitHubLogo} alt='GitHubLogo' title='GitHub Code' />
+                    <div className='ms-2 text-primary'>{user + '/' + repo}</div>
                 </NavbarBrand>
                 <img alt='' src={menuIcon} className='border rounded btn p-0  d-md-none' onClick={toggle} width='30px' />
                 <Collapse className="justify-content-end" isOpen={isOpen} navbar>
@@ -56,7 +62,9 @@ const NavbarComponent = () => {
                         {routes.map(item => (
                             <NavItem key={item.path}>
 
-                                <CustomNavLink to={item.path}>{item.main}</CustomNavLink>
+                                <CustomNavLink to={item.path}>
+                                    <div className='btn btn-outline-primary'>{item.main}</div>
+                                </CustomNavLink>
 
                             </NavItem>
                         ))}

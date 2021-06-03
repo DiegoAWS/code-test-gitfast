@@ -1,16 +1,21 @@
-import axios from "axios"
+import axiosInstance from "../../helpers/axios"
+import store from '../store'
 
-const apiURL = 'https://api.github.com/repos/DiegoCuba/sistemadestock-ui/commits'
-// const apiURL = 'https://api.github.com/repos/DiegoCuba/code-test-gitfast/commits'
 
-export const getAllCommits = (page = 1) => axios
-    .get(apiURL, {
-        params: {
-            page
-        },
-        headers: {
-            Accept: 'application/vnd.github.inertia-preview+json',
-        }
-    })
-    .catch(error => { throw error })
 
+
+export const getAllCommits = (page = 1) => {
+
+    // grab current state
+    const state = store.getState();
+    const { user, repo } = state.repo
+
+    const apiURL = `/repos/${user}/${repo}/commits`
+    return axiosInstance
+        .get(apiURL, {
+            params: {
+                page
+            }
+        })
+        .catch(error => { throw error })
+}

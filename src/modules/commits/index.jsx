@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getCommits } from "../../redux/commits/actions"
 import OneCommit from "./OneCommit"
-import loadingIcon from '../../assets/imgs/loadingIcon.gif'
 import Pagination from "../../components/Pagination"
+import SpinnerLoading from "../../components/SpinnerLoading"
 
 export default function Commits() {
   const [page, setPage] = useState(1)
@@ -24,11 +24,7 @@ export default function Commits() {
 
     <div className='d-flex align-items-center'>
       <h2 className='m-0 text-light'>Commits</h2>
-      {
-        loading && <div className='ms-3 d-flex'>
-          <img alt='' src={loadingIcon} width='20px' height='20px' />
-        </div>
-      }
+      <SpinnerLoading loading={loading} />
       <Pagination links={links} loading={loading} page={page} setPage={setPage} />
     </div>
 

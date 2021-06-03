@@ -23,6 +23,7 @@ export default function OneCommit({ commit }) {
 
     const commitDate = isValid(new Date(commit?.commit?.author?.date))
         ? new Date(commit?.commit?.author?.date) : new Date()
+
     const timeDistance = 'Commited ' + formatDistance(commitDate, new Date()) + ' ago - ' + format(commitDate, 'PPpp')
 
 
@@ -50,7 +51,7 @@ export default function OneCommit({ commit }) {
     return (
         <div className='d-md-flex border-bottom border-white p-2'>
             <div className='flex-grow-1'>
-                <div className='flex text-white fs-6'>
+                <div className='flex text-white fs-6 text-break'>
                     {mainMessage}
                     {multiline && <div onClick={toggleCollapse}
                         className='d-inline-block bg-secondary p-0 ms-3 lh-1 btn' >
