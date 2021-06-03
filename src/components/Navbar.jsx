@@ -62,7 +62,9 @@ const NavbarComponent = () => {
                         {routes.map(item => (
                             <NavItem key={item.path}>
 
-                                <CustomNavLink to={item.path}>{item.main}</CustomNavLink>
+                                <CustomNavLink to={item.path}>
+                                    <div className='btn btn-outline-primary'>{item.main}</div>
+                                </CustomNavLink>
 
                             </NavItem>
                         ))}
