@@ -1,22 +1,13 @@
+
 import React from 'react'
 import { Button, ButtonGroup } from 'reactstrap';
+import processLinkText from '../helpers/processLinkText';
 
 export default function Pagination({ links, loading, page, setPage }) {
-    const linksArray = links?.split(',')
-    const paginationDataArray = linksArray?.map(item => {
 
-        const pageStart = item.indexOf('?page=');
-        const pageEnd = item.indexOf('>;')
-        const pageNumber = item.substring(pageStart + 6, pageEnd)
 
-        const relStart = item.indexOf('rel=')
-        const relation = item.substring(relStart + 5).replace('"', '')
-        return { pageNumber, relation }
-    })
-    const paginationData = paginationDataArray?.reduce((acc, item) => {
-        acc[item.relation] = item.pageNumber
-        return acc
-    }, {})
+    const paginationData = links && processLinkText(links)
+
     return (
         <>
             {links && <div className='flex-grow-1 d-flex justify-content-end '>
