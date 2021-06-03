@@ -1,10 +1,17 @@
 
 import axiosInstance from "../../helpers/axios"
 
-const apiURL = '/users/DiegoCuba'
+import store from '../store'
 
-export const getAllProfile = () => axiosInstance
-    .get(apiURL)
-    .catch(error => { throw error })
+export const getAllProfile = () => {
 
+    // grab current state
+    const state = store.getState();
+    const user = state.repo.user
 
+    const apiURL = '/users/' + user
+    return axiosInstance
+        .get(apiURL)
+        .catch(error => { throw error })
+
+}
