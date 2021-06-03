@@ -4,6 +4,7 @@ import { Input } from 'reactstrap'
 import { getRepositories } from '../../redux/repositories/actions'
 import SpinnerLoading from '../../components/SpinnerLoading'
 import { includes } from 'ramda'
+import OneRepository from './OneRepository'
 
 
 const clearText = (dirtyText) => {
@@ -72,14 +73,14 @@ export default function Settings() {
 
     }
 
-    const colorInputBorder = error404
-        ? 'border-danger'
-        : userNameInput === searchingText
-            ? 'border-light'
-            : 'border-primary'
+    const colorInputBorder = userNameInput === searchingText // User Stop typing
+        ? error404
+            ? 'border-danger' // Non existing GitHub UserName
+            : 'border-primary' // UserName founded
+        : 'border-light' // User is typing
 
     return (
-        <div className='text-white'>
+        <div className='p-4  p-lg-5 text-white'>
             <div className='d-flex align-items-center p-2'>
                 <div className='w-75'>
                     <Input type="text"
@@ -101,6 +102,11 @@ export default function Settings() {
             <div>
 
                 {error404 && <div>UserName not Found</div>}
+                <div className='p-3'>
+                    {repositories && Array.isArray(repositories) && repositories.map(repo => (
+                        <OneRepository key={repo.id} repo={repo} />
+                    ))}
+                </div>
             </div>
         </div>
     )
