@@ -15,7 +15,7 @@ const clearText = (dirtyText) => {
     return inputText
 }
 
-export default function Settings() {
+export default function Repositories() {
     const [page, setPage] = useState(1)
     const [searchingText, setSearchingText] = useState('DiegoCuba')
     const [typeSearch, setTypeSearch] = useState('owner')
@@ -114,8 +114,8 @@ export default function Settings() {
 
             <div>
 
-                {error404 && <div className='mt-4 text-center'>UserName not Found</div>}
-                {repositories && repositories.length === 0 && <div className='mt-4 text-center'>No Repositories found!!</div>}
+                {error404 && !loading && <div className='mt-4 text-center'>UserName not Found</div>}
+                {repositories && !loading && repositories.length === 0 && <div className='mt-4 text-center'>No Repositories found!!</div>}
                 <div className='p-3'>
                     {!error404 && repositories && Array.isArray(repositories) && repositories.map(repo => (
                         <OneRepository key={repo.id} repo={repo} />

@@ -1,7 +1,7 @@
 import Commits from "../modules/commits"
 import LandingPage from "../modules/landing"
 import Profile from "../modules/profile"
-import Settings from "../modules/repositories/index"
+import Repositories from "../modules/repositories/index"
 
 
 const routes = [
@@ -24,10 +24,10 @@ const routes = [
         component: Profile
     },
     {
-        path: "/settings",
+        path: "/repositories",
         exact: true,
-        main: 'Settings',
-        component: Settings
+        main: 'Repositories',
+        component: Repositories
     },
 ]
 
