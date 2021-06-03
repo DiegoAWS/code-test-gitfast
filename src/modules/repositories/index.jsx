@@ -99,9 +99,7 @@ export default function Settings() {
                     />
                 </div>
 
-                <div className='d-flex mx-3'>
-                    <div className='me-2'>Searching: </div>
-                    <div className='text-primary'>{searchingText}</div>
+                <div className='d-flex mx-3' style={{ width: '30px' }}>
                     <SpinnerLoading loading={loading} />
                 </div>
                 <div className='d-flex mx-3'>
@@ -116,9 +114,10 @@ export default function Settings() {
 
             <div>
 
-                {error404 && <div>UserName not Found</div>}
+                {error404 && <div className='mt-4 text-center'>UserName not Found</div>}
+                {repositories && repositories.length === 0 && <div className='mt-4 text-center'>No Repositories found!!</div>}
                 <div className='p-3'>
-                    {repositories && Array.isArray(repositories) && repositories.map(repo => (
+                    {!error404 && repositories && Array.isArray(repositories) && repositories.map(repo => (
                         <OneRepository key={repo.id} repo={repo} />
                     ))}
                 </div>

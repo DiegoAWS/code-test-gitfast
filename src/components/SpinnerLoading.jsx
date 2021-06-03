@@ -5,7 +5,7 @@ export default function SpinnerLoading({ loading, ...props }) {
     return (
         <>
             {
-                loading && <div className='ms-4 d-flex' {...props} >
+                loading && <div className='ps-4 d-flex' {...props} >
                     <img alt='' src={loadingIcon} width='20px' height='20px' />
                 </div>
             }

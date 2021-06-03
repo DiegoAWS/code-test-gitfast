@@ -5,8 +5,20 @@ import forkIcon from '../../assets/imgs/forkIcon.svg'
 import gitHubLogo from '../../assets/imgs/gitHubLogo.svg'
 
 import { Button } from 'reactstrap'
+import { useDispatch } from 'react-redux'
+import { setNewRepoUser } from '../../redux/repo/actions'
 
 export default function OneRepository({ repo, ...props }) {
+
+    const dispatch = useDispatch()
+
+    const setRepo = () => {
+        const info = repo.full_name.split('/')
+        dispatch(setNewRepoUser({
+            user: info[0],
+            repo: info[1]
+        }))
+    }
 
     const commitDate = isValid(new Date(repo.updated_at))
         ? new Date(repo.updated_at) : new Date()
@@ -36,7 +48,7 @@ export default function OneRepository({ repo, ...props }) {
                 </div>
             </div>
             <div>
-                <Button color="primary" size="sm">
+                <Button color="primary" size="sm" onClick={setRepo}>
                     <img alt='' src={gitHubLogo} width='15px' className=' me-2' />
                     Use it!</Button>
             </div>
