@@ -3,7 +3,6 @@ import store from '../store'
 
 
 
-
 export const getAllCommits = (page = 1) => {
 
     // grab current state

@@ -6,6 +6,8 @@ const initialCommitsState = {
     loading: false,
     links: '',
     errors: null
+
+
 }
 
 const commitsReducer = (state = initialCommitsState, action) => {
@@ -31,6 +33,7 @@ const commitsReducer = (state = initialCommitsState, action) => {
                 ...state,
                 loading: false,
                 error: action.message
+
             }
 
         default:
