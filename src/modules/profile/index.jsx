@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getProfile } from '../../redux/profile/actions'
 import LeftProfile from './LeftProfile'
 import RightProfile from './RightProfile'
-import loadingIcon from '../../assets/imgs/loadingIcon.gif'
 import { NavLink } from 'reactstrap'
+import SpinnerLoading from '../../components/SpinnerLoading'
 
 
 export default function Profile() {
@@ -14,7 +14,6 @@ export default function Profile() {
 
 
     useEffect(() => {
-        console.log('here')
         dispatch(getProfile())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
@@ -25,11 +24,7 @@ export default function Profile() {
                 <div className='d-flex align-items-center'>
                     <div className='fs-2'>GitHub Profile</div>
 
-                    {
-                        loading && <div className='ms-4 d-flex'>
-                            <img alt='' src={loadingIcon} width='20px' height='20px' />
-                        </div>
-                    }
+                    <SpinnerLoading loading={loading} />
                 </div>
                 <NavLink href={html_url}>{html_url}</NavLink>
             </div>

@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify'
 import { GET_PROFILE_REQUEST, GET_PROFILE_SUCCESS, GET_PROFILE_FAILED } from './types'
 
 const initialProfileState = {
@@ -12,7 +13,8 @@ const profileReducer = (state = initialProfileState, action) => {
         case GET_PROFILE_REQUEST:
             return {
                 ...state,
-                loading: true
+                loading: true,
+                errors: null
             }
         case GET_PROFILE_SUCCESS:
             return {
@@ -22,6 +24,7 @@ const profileReducer = (state = initialProfileState, action) => {
             }
 
         case GET_PROFILE_FAILED:
+            toast.error(action.message)
             return {
                 ...state,
                 loading: false,
