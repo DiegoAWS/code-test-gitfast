@@ -11,6 +11,7 @@ export default function Profile() {
     const dispatch = useDispatch()
     const profile = useSelector((state) => state?.profile.profile)
     const loading = useSelector((state) => state?.profile.loading)
+    const errors = useSelector((state) => state?.profile.errors)
 
 
     useEffect(() => {
@@ -28,7 +29,7 @@ export default function Profile() {
                 </div>
                 <NavLink href={html_url}>{html_url}</NavLink>
             </div>
-            {profile && <div className='d-md-flex py-5'>
+            {!errors && profile && <div className='d-md-flex py-5'>
                 <LeftProfile profile={profile} />
                 <RightProfile profile={profile} />
             </div>}

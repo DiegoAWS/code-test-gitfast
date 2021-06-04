@@ -1,10 +1,13 @@
+import { includes } from 'ramda'
+import { GENERIC_FETCHING_ERROR } from '../../helpers/genericErrorToast';
+import { toast } from 'react-toastify';
 import { GET_REPOSITORIES_REQUEST, GET_REPOSITORIES_SUCCESS, GET_REPOSITORIES_FAILED } from './types'
 
 const initialRepositoriesState = {
     repositories: [],
     loading: false,
     errors: null,
-    links: ''
+    links: '',
 }
 
 const repositoriesReducer = (state = initialRepositoriesState, action) => {
@@ -25,10 +28,14 @@ const repositoriesReducer = (state = initialRepositoriesState, action) => {
             }
 
         case GET_REPOSITORIES_FAILED:
+
+            const error404 = includes('404', action.message) // UserName not Found
+            !error404 && toast.error(GENERIC_FETCHING_ERROR) //Other error than a 404
             return {
                 ...state,
                 loading: false,
-                errors: action.message
+                error404,
+                errors: true
             }
 
         default:

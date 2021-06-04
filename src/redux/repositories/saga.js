@@ -1,24 +1,22 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
+import { errorFetchingRepositories, saveFetchedRepositories } from './actions'
 import { getAllRepositories } from './services'
-import { GET_REPOSITORIES_REQUEST, GET_REPOSITORIES_SUCCESS, GET_REPOSITORIES_FAILED } from './types'
+import { GET_REPOSITORIES_REQUEST } from './types'
 
 
 
-function* fetchRepositories(action) {
+export function* fetchRepositories(action) {
 
     try {
         const repositoriesRequest = yield call(getAllRepositories, action.payload)
-        yield put({
-            type: GET_REPOSITORIES_SUCCESS,
-            repositories: repositoriesRequest.data,
-            links: repositoriesRequest.headers.link
-        })
+
+        const repositories = repositoriesRequest.data
+        const links = repositoriesRequest.headers.link
+
+        yield put(saveFetchedRepositories({ repositories, links }))
     }
     catch (e) {
-        yield put({
-            type: GET_REPOSITORIES_FAILED,
-            message: e.message
-        })
+        yield put(errorFetchingRepositories())
     }
 }
 
