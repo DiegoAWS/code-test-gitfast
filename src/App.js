@@ -18,7 +18,7 @@ function App() {
     <Provider store={store}>
 
       <Router>
-        <div style={{ backgroundColor: 'black', minHeight: '100vh', maxHeight: '100vh' }}>
+        <div style={{ backgroundColor: 'black', minHeight: '100vh' }}>
           <ToastContainer />
           <NavbarComponent />
           <Switch>
