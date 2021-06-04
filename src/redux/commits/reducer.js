@@ -21,6 +21,7 @@ const commitsReducer = (state = initialCommitsState, action) => {
         case GET_COMMITS_SUCCESS:
             return {
                 ...state,
+                errors: null,
                 loading: false,
                 commits: action.commits,
                 links: action.links

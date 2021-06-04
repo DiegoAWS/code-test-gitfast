@@ -3,7 +3,7 @@ import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 import { gitHubApiBaseUrl } from '../../helpers/axios';
 import { getAllCommits } from "./services";
-import mockCommits from '../../constants/test-mock-data/mockCommits'
+import { mockCommits } from '../../constants/test-mock-data/mockCommits'
 
 describe('Testing getAllCommits', () => {
 
