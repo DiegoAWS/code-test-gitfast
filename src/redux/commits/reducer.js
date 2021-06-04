@@ -1,13 +1,12 @@
 import { GET_COMMITS_REQUEST, GET_COMMITS_SUCCESS, GET_COMMITS_FAILED } from './types'
+import { GENERIC_FETCHING_ERROR } from '../../helpers/genericErrorToast';
 import { toast } from 'react-toastify';
 
-const initialCommitsState = {
+export const initialCommitsState = {
     commits: [],
     loading: false,
     links: '',
     errors: null
-
-
 }
 
 const commitsReducer = (state = initialCommitsState, action) => {
@@ -28,12 +27,11 @@ const commitsReducer = (state = initialCommitsState, action) => {
             }
 
         case GET_COMMITS_FAILED:
-            toast.error(action.message)
+            toast.error(GENERIC_FETCHING_ERROR)
             return {
                 ...state,
                 loading: false,
-                error: action.message
-
+                errors: true
             }
 
         default:

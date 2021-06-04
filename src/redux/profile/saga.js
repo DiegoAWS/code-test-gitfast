@@ -1,24 +1,22 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
-import { getAllProfile } from './services'
-import { GET_PROFILE_REQUEST, GET_PROFILE_SUCCESS, GET_PROFILE_FAILED } from './types'
+import { saveFetchedProfile, errorFetchingProfile } from './actions'
+import { getProfile } from './services'
+import { GET_PROFILE_REQUEST } from './types'
 
 
 
-function* fetchProfile(action) {
+export function* fetchProfile() {
 
     try {
-        const profileRequest = yield call(getAllProfile, action.payload)
-        yield put({
-            type: GET_PROFILE_SUCCESS,
-            profile: profileRequest.data,
-            links: profileRequest.headers.link
-        })
+        const profileRequest = yield call(getProfile)
+
+        const profile = profileRequest.data
+        const links = profileRequest.headers.link
+
+        yield put(saveFetchedProfile({ profile, links }))
     }
     catch (e) {
-        yield put({
-            type: GET_PROFILE_FAILED,
-            message: e.message
-        })
+        yield put(errorFetchingProfile())
     }
 }
 
