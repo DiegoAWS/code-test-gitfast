@@ -1,0 +1,1 @@
+export const mockLinks = `<https://api.github.com/repositories/372121974/commits?page=2>; rel="next", <https://api.github.com/repositories/372121974/commits?page=3>; rel="last"`

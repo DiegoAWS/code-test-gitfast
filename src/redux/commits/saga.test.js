@@ -2,7 +2,7 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 import { errorFetchingCommits, saveFetchedCommits } from './actions';
 import commitsSaga, { fetchCommits } from './saga';
 import { getAllCommits } from './services';
-import mockCommits from '../../constants/test-mock-data/mockCommits'
+import { mockCommits } from '../../constants/test-mock-data/mockCommits'
 
 describe('commitsSaga', () => {
     const genObject = commitsSaga();

@@ -1,13 +1,13 @@
 import { toast } from 'react-toastify'
 import { SET_NEW_REPO_USER } from './types'
 
-const initialRepositoriesState = {
+export const initialRepoState = {
     repo: 'code-test-gitfast',
     user: 'DiegoCuba',
 
 }
 
-const repoReducer = (state = initialRepositoriesState, action) => {
+const repoReducer = (state = initialRepoState, action) => {
 
     switch (action.type) {
         case SET_NEW_REPO_USER:

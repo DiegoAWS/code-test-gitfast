@@ -1,6 +1,6 @@
 import { errorFetchingCommits, getCommits, saveFetchedCommits } from "./actions";
 import { GET_COMMITS_FAILED, GET_COMMITS_REQUEST, GET_COMMITS_SUCCESS } from "./types";
-import mockCommits from '../../constants/test-mock-data/mockCommits'
+import { mockCommits } from '../../constants/test-mock-data/mockCommits'
 
 
 // Tests

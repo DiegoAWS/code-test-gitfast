@@ -2,7 +2,7 @@ import { GENERIC_FETCHING_ERROR } from '../../helpers/genericErrorToast';
 import { toast } from 'react-toastify';
 import { GET_PROFILE_REQUEST, GET_PROFILE_SUCCESS, GET_PROFILE_FAILED } from './types'
 
-const initialProfileState = {
+export const initialProfileState = {
     profile: {},
     loading: false,
     errors: null
@@ -21,6 +21,7 @@ const profileReducer = (state = initialProfileState, action) => {
             return {
                 ...state,
                 loading: false,
+                errors: null,
                 profile: action.profile
             }
 

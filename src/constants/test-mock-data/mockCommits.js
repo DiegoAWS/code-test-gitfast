@@ -1,4 +1,4 @@
-const mockCommits = [
+export const mockCommits = [
     {
         "sha": "64fea986161f5fbd371f6720c7276025178c29e2",
         "node_id": "MDY6Q29tbWl0MzcyMTIxOTc0OjY0ZmVhOTg2MTYxZjVmYmQzNzFmNjcyMGM3Mjc2MDI1MTc4YzI5ZTI=",
@@ -84,5 +84,3 @@ const mockCommits = [
         ]
     }
 ]
-
-export default mockCommits
