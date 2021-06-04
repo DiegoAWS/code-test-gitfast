@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Input } from 'reactstrap'
 import { getRepositories } from '../../redux/repositories/actions'
 import SpinnerLoading from '../../components/SpinnerLoading'
-import { includes } from 'ramda'
 import OneRepository from './OneRepository'
 import Pagination from '../../components/Pagination'
 import TypeSelector from './TypeSelector'
@@ -28,10 +27,9 @@ export default function Repositories() {
 
     const repositories = useSelector((state) => state.repositories.repositories)
     const loading = useSelector((state) => state.repositories.loading)
-    const errors = useSelector((state) => state.repositories.errors)
-    const error404 = errors && includes('404', errors) // UserName not Found
-
+    const error404 = useSelector((state) => state.repositories.error404)
     const links = useSelector((state) => state.repositories.links)
+    const errors = useSelector((state) => state.repositories.errors)
 
     useEffect(() => {
         if (searchingText)  //If there is no UserName to search, avoid the unnecessary search
@@ -114,10 +112,10 @@ export default function Repositories() {
 
             <div>
 
-                {error404 && !loading && <div className='mt-4 text-center'>UserName not Found</div>}
-                {repositories && !loading && repositories.length === 0 && <div className='mt-4 text-center'>No Repositories found!!</div>}
+                {!errors && error404 && !loading && <div className='mt-4 text-center'>UserName not Found</div>}
+                {!errors && repositories && !loading && repositories.length === 0 && <div className='mt-4 text-center'>No Repositories found!!</div>}
                 <div className='p-3'>
-                    {!error404 && repositories && Array.isArray(repositories) && repositories.map(repo => (
+                    {!errors && !error404 && repositories && Array.isArray(repositories) && repositories.map(repo => (
                         <OneRepository key={repo.id} repo={repo} />
                     ))}
                 </div>

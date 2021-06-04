@@ -1,9 +1,11 @@
-import { toast } from 'react-toastify'
+import { GENERIC_FETCHING_ERROR } from '../../helpers/genericErrorToast';
+import { toast } from 'react-toastify';
 import { GET_PROFILE_REQUEST, GET_PROFILE_SUCCESS, GET_PROFILE_FAILED } from './types'
 
 const initialProfileState = {
     profile: {},
-    loading: false
+    loading: false,
+    errors: null
 }
 
 const profileReducer = (state = initialProfileState, action) => {
@@ -23,10 +25,11 @@ const profileReducer = (state = initialProfileState, action) => {
             }
 
         case GET_PROFILE_FAILED:
-            toast.error('An ERROR happens while fetching data')
+            toast.error(GENERIC_FETCHING_ERROR)
             return {
                 ...state,
-                loading: false
+                loading: false,
+                errors: true
             }
 
         default:

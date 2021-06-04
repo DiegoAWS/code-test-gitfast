@@ -13,6 +13,10 @@ const store = createStore(
     composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
 
-sagaMiddleware.run(rootSaga)
+//Workaround to avoid SAGA warning while runing the tests
+//As indicated here https://github.com/babel/babel/issues/10086
+if (process.env.NODE_ENV !== 'test') {
+    sagaMiddleware.run(rootSaga);
+}
 
 export default store
