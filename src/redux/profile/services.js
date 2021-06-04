@@ -3,7 +3,7 @@ import axiosInstance from "../../helpers/axios"
 
 import store from '../store'
 
-export const getProfile = () => {
+export const getOneProfile = () => {
 
     // grab current state
     const state = store.getState();
