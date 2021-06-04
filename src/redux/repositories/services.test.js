@@ -15,6 +15,12 @@ describe('Testing getProfile', () => {
                 ctx.json(mockRepositories)
 
             )
+        }),
+        rest.get('*', (req, res, ctx) => {// Fallback to avoid axios default behaviors in case request Handler don't match
+            console.log(`Please add a request Handler for ${req.url.toString()}`)
+            return res(
+                ctx.status(500)
+            )
         })
     )
     beforeAll(() => server.listen())
