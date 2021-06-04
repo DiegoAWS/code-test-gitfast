@@ -3,7 +3,7 @@ import { GENERIC_FETCHING_ERROR } from '../../helpers/genericErrorToast';
 import { toast } from 'react-toastify';
 import { GET_REPOSITORIES_REQUEST, GET_REPOSITORIES_SUCCESS, GET_REPOSITORIES_FAILED } from './types'
 
-const initialRepositoriesState = {
+export const initialRepositoriesState = {
     repositories: [],
     loading: false,
     errors: null,
@@ -23,6 +23,7 @@ const repositoriesReducer = (state = initialRepositoriesState, action) => {
             return {
                 ...state,
                 loading: false,
+                errors: null,
                 repositories: action.repositories,
                 links: action.links
             }
