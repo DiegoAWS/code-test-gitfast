@@ -15,9 +15,8 @@ export const saveFetchedCommits = ({ commits, links }) => {
     }
 }
 
-export const errorFetchingCommits = (error) => {
+export const errorFetchingCommits = () => {
     return {
-        type: GET_COMMITS_FAILED,
-        message: error.message
+        type: GET_COMMITS_FAILED
     }
 }

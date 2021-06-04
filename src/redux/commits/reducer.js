@@ -4,8 +4,7 @@ import { toast } from 'react-toastify';
 const initialCommitsState = {
     commits: [],
     loading: false,
-    links: '',
-    errors: null
+    links: ''
 
 
 }
@@ -28,11 +27,10 @@ const commitsReducer = (state = initialCommitsState, action) => {
             }
 
         case GET_COMMITS_FAILED:
-            toast.error(action.message)
+            toast.error('An ERROR happens while fetching data')
             return {
                 ...state,
-                loading: false,
-                error: action.message
+                loading: false
 
             }
 

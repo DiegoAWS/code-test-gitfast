@@ -3,8 +3,7 @@ import { GET_PROFILE_REQUEST, GET_PROFILE_SUCCESS, GET_PROFILE_FAILED } from './
 
 const initialProfileState = {
     profile: {},
-    loading: false,
-    errors: null
+    loading: false
 }
 
 const profileReducer = (state = initialProfileState, action) => {
@@ -24,11 +23,10 @@ const profileReducer = (state = initialProfileState, action) => {
             }
 
         case GET_PROFILE_FAILED:
-            toast.error(action.message)
+            toast.error('An ERROR happens while fetching data')
             return {
                 ...state,
-                loading: false,
-                errors: action.message
+                loading: false
             }
 
         default:

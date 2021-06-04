@@ -43,13 +43,12 @@ describe('getCharacters', () => {
         const action = { payload: { page: 1 } }
         const generator = fetchCommits(action);
         const response = {};
-        const error = { message: "Cannot read property 'link' of undefined" }
 
         expect(generator.next().value)
             .toEqual(call(getAllCommits, action.payload));
 
         expect(generator.next(response).value)
-            .toEqual(put(errorFetchingCommits(error)));
+            .toEqual(put(errorFetchingCommits()));
 
         expect(generator.next())
             .toEqual({ done: true, value: undefined });

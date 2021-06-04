@@ -14,7 +14,7 @@ export function* fetchCommits(action) {
         yield put(saveFetchedCommits({ commits, links }))
     }
     catch (e) {
-        yield put(errorFetchingCommits(e))
+        yield put(errorFetchingCommits())
     }
 }
 
