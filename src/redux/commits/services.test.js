@@ -5,31 +5,42 @@ import { gitHubApiBaseUrl } from '../../helpers/axios';
 import { getAllCommits } from "./services";
 import mockCommits from '../../constants/test-mock-data/mockCommits'
 
+describe('Testing getAllCommits', () => {
 
-const server = setupServer(
-    rest.get(gitHubApiBaseUrl + '/repos/DiegoCuba/code-test-gitfast/commits', (req, res, ctx) => {
-        return res(
-            ctx.status(200),
-            ctx.json(mockCommits)
+    const server = setupServer(
+        rest.get(gitHubApiBaseUrl + '/repos/DiegoCuba/code-test-gitfast/commits', (req, res, ctx) => {
+            return res(
+                ctx.status(200),
+                ctx.json(mockCommits)
 
-        )
-    })
-)
-
-beforeAll(() => server.listen())
-afterAll(() => server.close())
-afterEach(() => server.resetHandlers())
-
-describe('some-thing', () => {
+            )
+        })
+    )
+    beforeAll(() => server.listen())
+    afterAll(() => server.close())
+    afterEach(() => server.resetHandlers())
 
 
-
-    it('test get', async () => {
+    it('test get commits with AXIOS and Success', async () => {
 
 
         const result = await getAllCommits(1)
 
         expect(result.data).toEqual(mockCommits)
     })
+
+    it('test get commits with AXIOS and Failure', async () => {
+        server.use(
+            rest.get(gitHubApiBaseUrl + '/repos/DiegoCuba/code-test-gitfast/commits', (req, res, ctx) => {
+                return res(
+                    ctx.status(404)
+                )
+            })
+        )
+
+        await expect(getAllCommits(1)).rejects.toThrow('404')
+
+    })
+
 
 })
