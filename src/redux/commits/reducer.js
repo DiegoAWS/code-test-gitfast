@@ -1,12 +1,10 @@
 import { GET_COMMITS_REQUEST, GET_COMMITS_SUCCESS, GET_COMMITS_FAILED } from './types'
 import { toast } from 'react-toastify';
 
-const initialCommitsState = {
+export const initialCommitsState = {
     commits: [],
     loading: false,
     links: ''
-
-
 }
 
 const commitsReducer = (state = initialCommitsState, action) => {
