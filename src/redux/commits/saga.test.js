@@ -1,9 +1,8 @@
-import { runSaga } from '@redux-saga/core';
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { errorFetchingCommits, saveFetchedCommits } from './actions';
 import commitsSaga, { fetchCommits } from './saga';
 import { getAllCommits } from './services';
-import dummyCommits from '../../constants/test-mock-data/dummyCommits'
+import mockCommits from '../../constants/test-mock-data/mockCommits'
 
 describe('commitsSaga', () => {
     const genObject = commitsSaga();
@@ -18,12 +17,12 @@ describe('commitsSaga', () => {
     });
 });
 
-describe('getCharacters', () => {
-    it('success triggers success action with characters', () => {
+describe('fetchCommits', () => {
+    it('success triggers success action with commits', () => {
         const action = { payload: { page: 1 } }
         const generator = fetchCommits(action);
         const response = {
-            data: dummyCommits,
+            data: mockCommits,
             headers: { link: '' }
         };
         const commits = response.data

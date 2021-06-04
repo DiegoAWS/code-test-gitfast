@@ -1,14 +1,14 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 import { saveFetchedProfile, errorFetchingProfile } from './actions'
-import { getAllProfile } from './services'
+import { getProfile } from './services'
 import { GET_PROFILE_REQUEST } from './types'
 
 
 
-function* fetchProfile(action) {
+export function* fetchProfile() {
 
     try {
-        const profileRequest = yield call(getAllProfile, action.payload)
+        const profileRequest = yield call(getProfile)
 
         const profile = profileRequest.data
         const links = profileRequest.headers.link
