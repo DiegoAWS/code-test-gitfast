@@ -52,18 +52,26 @@ const NavbarComponent = () => {
             <TransparentNavbar color="dark" expand="md">
                 <NavbarBrand className='d-flex' href="https://github.com/DiegoCuba/code-test-gitfast#readme">
                     <GitHubLogo src={gitHubLogo} alt='GitHubLogo' title='GitHub Code' />
-                    <div className='ms-2 text-primary'>{user + '/' + repo}</div>
                 </NavbarBrand>
+                <div className='d-none d-sm-block ms-1 fs-5 text-primary'>
+                    <a href={`https://github.com/${user}`}>{user}</a>
+                    <span>/</span>
+                    <a href={`https://github.com/${user}/${repo}`}>{repo}</a>
+                </div>
                 <img alt='' src={menuIcon} className='border rounded btn p-0  d-md-none' onClick={toggle} width='30px' />
                 <Collapse className="justify-content-end" isOpen={isOpen} navbar>
 
                     <Nav navbar>
-
+                        <div className='d-sm-none ms-1 fs-5 text-primary'>
+                            <a href={`https://github.com/${user}`}>{user}</a>
+                            <span>/</span>
+                            <a href={`https://github.com/${user}/${repo}`}>{repo}</a>
+                        </div>
                         {routes.map(item => (
                             <NavItem key={item.path}>
 
                                 <CustomNavLink to={item.path}>
-                                    <div className='btn btn-outline-primary'>{item.main}</div>
+                                    <div className='d-block d-md-inline-block mx-1 btn btn-outline-primary'>{item.main}</div>
                                 </CustomNavLink>
 
                             </NavItem>
