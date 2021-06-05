@@ -1,4 +1,4 @@
-const mockCommits = [
+export const mockCommits = [
     {
         "sha": "64fea986161f5fbd371f6720c7276025178c29e2",
         "node_id": "MDY6Q29tbWl0MzcyMTIxOTc0OjY0ZmVhOTg2MTYxZjVmYmQzNzFmNjcyMGM3Mjc2MDI1MTc4YzI5ZTI=",
@@ -13,7 +13,7 @@ const mockCommits = [
                 "email": "noreply@github.com",
                 "date": "2021-06-03T10:10:45Z"
             },
-            "message": "Merge pull request #32 from DiegoCuba/dev\n\nRepositories Section",
+            "message": "TESTING TEXT PRESENT",
             "tree": {
                 "sha": "21e09525220be856f750c2c5ee89d630807aafee",
                 "url": "https://api.github.com/repos/DiegoCuba/code-test-gitfast/git/trees/21e09525220be856f750c2c5ee89d630807aafee"
@@ -84,5 +84,3 @@ const mockCommits = [
         ]
     }
 ]
-
-export default mockCommits
