@@ -17,13 +17,15 @@ const repositoriesReducer = (state = initialRepositoriesState, action) => {
             return {
                 ...state,
                 loading: true,
-                errors: false
+                errors: false,
+                error404: false
             }
         case GET_REPOSITORIES_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 errors: false,
+                error404: false,
                 repositories: action.repositories,
                 links: action.links
             }

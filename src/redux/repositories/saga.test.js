@@ -49,12 +49,13 @@ describe('fetchRepositories', () => {
         const action = { payload: { page: 1 } }
         const generator = fetchRepositories(action);
         const response = {};
+        const error = { message: "Cannot read property 'link' of undefined" }
 
         expect(generator.next().value)
             .toEqual(call(getAllRepositories, action.payload));
 
         expect(generator.next(response).value)
-            .toEqual(put(errorFetchingRepositories()));
+            .toEqual(put(errorFetchingRepositories(error)));
 
         expect(generator.next())
             .toEqual({ done: true, value: undefined });

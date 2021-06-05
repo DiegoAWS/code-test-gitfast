@@ -16,7 +16,7 @@ export function* fetchRepositories(action) {
         yield put(saveFetchedRepositories({ repositories, links }))
     }
     catch (e) {
-        yield put(errorFetchingRepositories())
+        yield put(errorFetchingRepositories(e))
     }
 }
 

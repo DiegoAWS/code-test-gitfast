@@ -112,7 +112,7 @@ export default function Repositories() {
 
             <div>
 
-                {!errors && error404 && !loading && <div className='mt-4 text-center'>UserName not Found</div>}
+                {errors && error404 && !loading && <div className='mt-4 text-center'>UserName not Found</div>}
                 {!errors && repositories && !loading && repositories.length === 0 && <div className='mt-4 text-center'>No Repositories found!!</div>}
                 <div className='p-3'>
                     {!errors && !error404 && repositories && Array.isArray(repositories) && repositories.map(repo => (
