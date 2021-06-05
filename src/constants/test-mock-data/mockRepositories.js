@@ -2,7 +2,7 @@ export const mockRepositories = [
     {
         "id": 350747917,
         "node_id": "MDEwOlJlcG9zaXRvcnkzNTA3NDc5MTc=",
-        "name": "album-trello",
+        "name": "TESTING TEXT PRESENT",
         "full_name": "DiegoCuba/album-trello",
         "private": false,
         "owner": {

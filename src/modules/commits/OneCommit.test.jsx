@@ -3,7 +3,7 @@ import { mockCommits } from "../../constants/test-mock-data/mockCommits"
 import OneCommit from "./OneCommit"
 
 describe('One Commit Component', () => {
-    it('render a test property', () => {
+    it('render test property', () => {
 
         render(<OneCommit commit={mockCommits[0]} />)
 
