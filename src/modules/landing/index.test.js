@@ -1,6 +1,6 @@
 import LandingPage from '.'
 import { render, screen } from '@testing-library/react';
-import landingBackground from '../../assets/imgs/landingBackground.jpg'
+import landingBackground from '../../assets/imgs/landingBackground.png'
 
 
 describe('LandingPage component', () => {
@@ -19,7 +19,7 @@ describe('LandingPage component', () => {
 
 
 
-        expect(screen.getByText(/Welcome to my Code Test for GitFast enterprise!!!/)).toBeInTheDocument();
+        expect(screen.getByText(/Welcome to my Code Test for GitFast/)).toBeInTheDocument();
 
 
     })
