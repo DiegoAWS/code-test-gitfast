@@ -6,7 +6,7 @@ export const initialCommitsState = {
     commits: [],
     loading: false,
     links: '',
-    errors: null
+    errors: false
 }
 
 const commitsReducer = (state = initialCommitsState, action) => {
@@ -16,12 +16,12 @@ const commitsReducer = (state = initialCommitsState, action) => {
             return {
                 ...state,
                 loading: true,
-                errors: null
+                errors: false
             }
         case GET_COMMITS_SUCCESS:
             return {
                 ...state,
-                errors: null,
+                errors: false,
                 loading: false,
                 commits: action.commits,
                 links: action.links

@@ -15,7 +15,7 @@ describe('Commits commitsReducer', () => {
             })
         ).toEqual({
             loading: true,
-            errors: null
+            errors: false
         })
     })
 
@@ -31,7 +31,7 @@ describe('Commits commitsReducer', () => {
             loading: false,
             commits: mockCommits,
             links: mockLinks,
-            errors: null
+            errors: false
         })
     })
 

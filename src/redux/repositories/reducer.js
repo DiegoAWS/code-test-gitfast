@@ -6,7 +6,7 @@ import { GET_REPOSITORIES_REQUEST, GET_REPOSITORIES_SUCCESS, GET_REPOSITORIES_FA
 export const initialRepositoriesState = {
     repositories: [],
     loading: false,
-    errors: null,
+    errors: false,
     links: '',
 }
 
@@ -17,13 +17,13 @@ const repositoriesReducer = (state = initialRepositoriesState, action) => {
             return {
                 ...state,
                 loading: true,
-                errors: null
+                errors: false
             }
         case GET_REPOSITORIES_SUCCESS:
             return {
                 ...state,
                 loading: false,
-                errors: null,
+                errors: false,
                 repositories: action.repositories,
                 links: action.links
             }

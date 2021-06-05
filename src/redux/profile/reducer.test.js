@@ -14,7 +14,7 @@ describe('Profile profileReducer', () => {
             })
         ).toEqual({
             loading: true,
-            errors: null
+            errors: false
         })
     })
 
@@ -28,7 +28,7 @@ describe('Profile profileReducer', () => {
         ).toEqual({
             loading: false,
             profile: mockProfile,
-            errors: null
+            errors: false
         })
     })
 
