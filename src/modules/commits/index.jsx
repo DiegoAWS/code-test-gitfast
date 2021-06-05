@@ -24,7 +24,7 @@ export default function Commits() {
 
 
     <div className='d-flex align-items-center'>
-      <h2 className='m-0 text-light'>Commits</h2>
+      <h2 className='m-0 text-light'>Repository Commits</h2>
       <SpinnerLoading loading={loading} />
       <Pagination links={links} loading={loading} page={page} setPage={setPage} />
     </div>
@@ -32,6 +32,11 @@ export default function Commits() {
     <div className='d-flex justify-content-center'>
 
       <div className='m-4 w-100 border border-white rounded-3'>
+
+        <div>{errors?.toString()}</div>
+        <div>{links.toString()}</div>
+        <div>{commits.length.toString()}</div>
+        <div>{loading.toString()}</div>
 
         {!errors && commits?.length === 0 && !loading && <div className='text-light'>No commits availables</div>}
         {!errors && commits && Array.isArray(commits) && commits.map(item => (

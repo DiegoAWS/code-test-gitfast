@@ -13,7 +13,7 @@ export const mockCommits = [
                 "email": "noreply@github.com",
                 "date": "2021-06-03T10:10:45Z"
             },
-            "message": "Merge pull request #32 from DiegoCuba/dev\n\nRepositories Section",
+            "message": "TESTING TEXT PRESENT",
             "tree": {
                 "sha": "21e09525220be856f750c2c5ee89d630807aafee",
                 "url": "https://api.github.com/repos/DiegoCuba/code-test-gitfast/git/trees/21e09525220be856f750c2c5ee89d630807aafee"

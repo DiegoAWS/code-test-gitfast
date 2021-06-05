@@ -4,7 +4,8 @@ import store from './redux/store'
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 import NavbarComponent from "./components/Navbar";
 import routes from "./constants/routes";
@@ -30,6 +31,7 @@ function App() {
                 exact={item.exact}
               />
             ))}
+            <Redirect to='/' />
           </Switch>
 
 
