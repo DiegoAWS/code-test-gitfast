@@ -15,7 +15,8 @@ describe('Repositories repositoriesReducer', () => {
             })
         ).toEqual({
             loading: true,
-            errors: false
+            errors: false,
+            error404: false
         })
     })
 
@@ -31,7 +32,8 @@ describe('Repositories repositoriesReducer', () => {
             loading: false,
             links: mockLinks,
             repositories: mockRepositories,
-            errors: false
+            errors: false,
+            error404: false,
         })
     })
 
