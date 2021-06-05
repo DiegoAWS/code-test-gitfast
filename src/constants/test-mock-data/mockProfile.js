@@ -1,4 +1,4 @@
-const mockProfile = {
+export const mockProfile = {
     "login": "DiegoCuba",
     "id": 63636915,
     "node_id": "MDQ6VXNlcjYzNjM2OTE1",
@@ -17,7 +17,7 @@ const mockProfile = {
     "received_events_url": "https://api.github.com/users/DiegoCuba/received_events",
     "type": "User",
     "site_admin": false,
-    "name": "Diego Escobar",
+    "name": "TESTING TEXT PRESENT",
     "company": "Dofleini Software",
     "blog": "",
     "location": "Havana Cuba",
@@ -32,5 +32,3 @@ const mockProfile = {
     "created_at": "2020-04-14T08:00:32Z",
     "updated_at": "2021-06-03T10:07:56Z"
 }
-
-export default mockProfile

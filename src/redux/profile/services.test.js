@@ -3,7 +3,7 @@ import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 import { gitHubApiBaseUrl } from '../../helpers/axios';
 import { getOneProfile } from "./services";
-import mockProfile from '../../constants/test-mock-data/mockProfile'
+import { mockProfile } from '../../constants/test-mock-data/mockProfile'
 
 
 describe('Testing getProfile', () => {
@@ -32,7 +32,6 @@ describe('Testing getProfile', () => {
 
 
         const result = await getOneProfile()
-
         expect(result.data).toEqual(mockProfile)
     })
 
