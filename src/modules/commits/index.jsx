@@ -24,7 +24,7 @@ export default function Commits() {
 
 
     <div className='d-flex align-items-center'>
-      <h2 className='m-0 text-light'>Commits</h2>
+      <h2 className='m-0 text-light'>Repository Commits</h2>
       <SpinnerLoading loading={loading} />
       <Pagination links={links} loading={loading} page={page} setPage={setPage} />
     </div>

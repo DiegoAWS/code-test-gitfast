@@ -22,8 +22,11 @@ describe('NavbarComponent test', () => {
     })
 
     it('Render each Link declared in ./constants/routes.js', () => {
+        customRender(<NavbarComponent />, { initialState: { repo: { user, repo } } })
+
         routes.forEach(item => {
             expect(screen.getByText(item.main)).toBeInTheDocument()
+            expect(screen.getByText(item.main).parentElement).toHaveAttribute("href", item.path);
         })
     })
 
