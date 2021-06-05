@@ -7,7 +7,7 @@ import {
 
 
 export const cleanerText = item => ({
-    pageNumber: item.match(/\?page=(.*?)>/)[1], // Search text between '?page=' and '>'
+    pageNumber: item.match(/\?page=(.*?)\D/)[1], // Search text between '?page=' and '>'
     relation: item.split('rel=')[1].replace(/"/g, '') // Search all text after 'rel=' and remove ""
 })
 
