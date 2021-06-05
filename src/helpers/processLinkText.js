@@ -6,12 +6,12 @@ import {
 } from 'ramda';
 
 
-const cleanerText = item => ({
+export const cleanerText = item => ({
     pageNumber: item.match(/\?page=(.*?)>/)[1], // Search text between '?page=' and '>'
-    relation: item.split('rel=')[1].replaceAll('"', '') // Search all text after 'rel=' and remove ""
+    relation: item.split('rel=')[1].replace(/"/g, '') // Search all text after 'rel=' and remove ""
 })
 
-const reducerFunc = (acc, item) => {
+export const reducerFunc = (acc, item) => {
     acc[item.relation] = item.pageNumber
     return acc
 }
