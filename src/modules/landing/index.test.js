@@ -19,7 +19,7 @@ describe('LandingPage component', () => {
 
 
 
-        expect(screen.getByText).toBeInTheDocument();
+        expect(screen.getByText(/Welcome to my Code Test for GitFast enterprise!!!/)).toBeInTheDocument();
 
 
     })

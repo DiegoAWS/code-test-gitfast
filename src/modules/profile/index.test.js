@@ -2,19 +2,19 @@ import React from 'react';
 
 import { cleanup, screen } from '@testing-library/react';
 import { customRender } from '../../setupTests';
-import Commits from '.';
+import Profile from '.';
 import loadingIcon from '../../assets/imgs/loadingIcon.gif'
-import { mockCommits } from '../../constants/test-mock-data/mockCommits'
+import { mockProfile } from '../../constants/test-mock-data/mockProfile'
 
-describe('Commits test', () => {
+describe('Profile test', () => {
 
     afterEach(cleanup)
 
     it('Render Loading State', () => {
-        customRender(<Commits />, {
+        customRender(<Profile />, {
             initialState: {
-                commits: {
-                    commits: [],
+                profile: {
+                    profile: {},
                     loading: true,
                     errors: false,
                     links: ''
@@ -28,11 +28,11 @@ describe('Commits test', () => {
     })
 
 
-    it('Render Commits Rendered', () => {
-        customRender(<Commits />, {
+    it('Render Profile Rendered', () => {
+        customRender(<Profile />, {
             initialState: {
-                commits: {
-                    commits: mockCommits,
+                profile: {
+                    profile: mockProfile,
                     loading: false,
                     errors: false,
                     links: ''
