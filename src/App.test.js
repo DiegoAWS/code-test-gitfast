@@ -16,7 +16,7 @@ describe('Routing System test', () => {
             </Router>
         )
 
-        expect(screen.getByText(/Welcome to my Code Test for GitFast enterprise!!/i)).toBeInTheDocument()
+        expect(screen.getByText(/Welcome to my Code Test for GitFast/i)).toBeInTheDocument()
 
         const leftClick = { button: 0 }
 
@@ -54,7 +54,7 @@ describe('Routing System test', () => {
         )
         setTimeout(() => {
             // Redirect to Home
-            expect(screen.getByText(/Welcome to my Code Test for GitFast enterprise!!/i)).toBeInTheDocument()
+            expect(screen.getByText(/Welcome to my Code Test for GitFast/i)).toBeInTheDocument()
         }, 100)// Time to react-router change the current history and make the redirect(1ms is enougth)
 
     })
