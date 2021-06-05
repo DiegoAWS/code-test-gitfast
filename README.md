@@ -10,9 +10,9 @@
 - [Deployed Project](#deployed-project)
 - [Runing the project locally](#runing-the-project-locally)
 
-<img alt="Landing Background" src="src/assets/imgs/landingBackground.png" width="100%" />
+<img alt="Landing Background" src="src/assets/imgs/landingBackgroundReadme.png" width="100%" style="border:1px solid white;"/>
 
-<img alt="Landing Background" src="src/assets/imgs/test_process.gif" width="100%" />
+<img alt="Landing Background" src="src/assets/imgs/test_process.gif" width="100%" style="border:1px solid white;"/>
 
 ## Problem to solve:
 
