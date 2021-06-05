@@ -33,11 +33,6 @@ export default function Commits() {
 
       <div className='m-4 w-100 border border-white rounded-3'>
 
-        <div>{errors?.toString()}</div>
-        <div>{links.toString()}</div>
-        <div>{commits.length.toString()}</div>
-        <div>{loading.toString()}</div>
-
         {!errors && commits?.length === 0 && !loading && <div className='text-light'>No commits availables</div>}
         {!errors && commits && Array.isArray(commits) && commits.map(item => (
           <OneCommit key={item.sha} commit={item} />
