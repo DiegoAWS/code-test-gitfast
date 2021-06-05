@@ -104,13 +104,13 @@ git --version
 expecting something similar to (o newer versions):
 
 ```sh
-diego@DiegoPC:~$ node --version
+node --version
 v14.17.0
 
-diego@DiegoPC:~$ npm --version
+npm --version
 6.14.13
 
-diego@DiegoPC:~$ git version
+git version
 git version 2.20.1
 ```
 
