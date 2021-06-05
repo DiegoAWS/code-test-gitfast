@@ -15,8 +15,9 @@ export const saveFetchedRepositories = ({ repositories, links }) => {
     }
 }
 
-export const errorFetchingRepositories = () => {
+export const errorFetchingRepositories = (e) => {
     return {
-        type: GET_REPOSITORIES_FAILED
+        type: GET_REPOSITORIES_FAILED,
+        message: e?.message
     }
 }

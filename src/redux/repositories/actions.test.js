@@ -29,11 +29,14 @@ describe('Repositories Actions', () => {
     });
 
     it('Fetching Error', () => {
-
-        const action = errorFetchingRepositories();
+        const error = {
+            message: 'XXX_TEST_XXX'
+        }
+        const action = errorFetchingRepositories(error);
 
         expect(action).toEqual({
-            type: GET_REPOSITORIES_FAILED
+            type: GET_REPOSITORIES_FAILED,
+            message: error.message
         });
     });
 

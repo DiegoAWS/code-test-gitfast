@@ -12,6 +12,8 @@
 
 <img alt="Landing Background" src="src/assets/imgs/landingBackground.jpg" width="100%" />
 
+<img alt="Landing Background" src="src/assets/imgs/test_process.gif" width="100%" />
+
 ## Problem to solve:
 
 ### Objective
@@ -80,6 +82,7 @@ To see this project you could visit https://code-test-gitfast.web.app/ or you co
 Before start make sure you have installed this tools:
 
 - [Node JS](https://nodejs.org/en/) – LTS version or newer.
+- [NPM](https://www.npmjs.com/) – Usually comes with Node.
 - [Git](https://git-scm.com/) – Git CLI.
 
 To make sure ou have this tool installed please open a terminal and type:
@@ -88,28 +91,42 @@ To make sure ou have this tool installed please open a terminal and type:
 node --version
 ```
 
+```
+npm --version
+```
+
 and
 
 ```
 git --version
 ```
 
-expecting similar o newer versions:
+expecting something similar to (o newer versions):
 
 ```sh
 diego@DiegoPC:~$ node --version
 v14.17.0
 
+diego@DiegoPC:~$ npm --version
+6.14.13
+
 diego@DiegoPC:~$ git version
 git version 2.20.1
 ```
 
-Once you have installed `npm` and `git` you can download/install this project:
+Once you have installed `node` `npm` and `git` you can download/install this project:
 
 ```
 git clone https://github.com/DiegoCuba/code-test-gitfast.git
 cd code-test-gitfast
 npm install
 npm start
+```
 
+You will see the project in a browser at http://localhost:3000/
+
+Test are availables with [Jest testing Framework](https://jestjs.io/). To run this test pleas run
+
+```
+npm test
 ```

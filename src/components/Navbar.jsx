@@ -16,6 +16,8 @@ import routes from '../constants/routes';
 const TransparentNavbar = styled(Navbar)`
     background-color:#ffffff1f !important;
     padding:0 5px;
+    height:50px;
+    box-sizing: border-box;
 `
 
 const GitHubLogo = styled.img`
@@ -48,40 +50,38 @@ const NavbarComponent = () => {
     const toggle = () => setIsOpen(!isOpen);
 
     return (
-        <div>
-            <TransparentNavbar color="dark" expand="md">
-                <NavbarBrand className='d-flex' href="https://github.com/DiegoCuba/code-test-gitfast#readme">
-                    <GitHubLogo src={gitHubLogo} alt='GitHubLogo' title='GitHub Code' />
-                </NavbarBrand>
-                <div className='d-none d-sm-block ms-1 fs-5 text-primary'>
-                    <a href={`https://github.com/${user}`}>{user}</a>
-                    <span>/</span>
-                    <a href={`https://github.com/${user}/${repo}`}>{repo}</a>
-                </div>
-                <img alt='' src={menuIcon} className='border rounded btn p-0  d-md-none' onClick={toggle} width='30px' />
-                <Collapse className="justify-content-end" isOpen={isOpen} navbar>
+        <TransparentNavbar color="dark" expand="md">
+            <NavbarBrand className='d-flex' href="https://github.com/DiegoCuba/code-test-gitfast#readme">
+                <GitHubLogo src={gitHubLogo} alt='GitHubLogo' title='GitHub Code' />
+            </NavbarBrand>
+            <div className='d-none d-sm-block ms-1 fs-5 text-primary'>
+                <a href={`https://github.com/${user}`}>{user}</a>
+                <span>/</span>
+                <a href={`https://github.com/${user}/${repo}`}>{repo}</a>
+            </div>
+            <img alt='' src={menuIcon} className='border rounded btn p-0  d-md-none' onClick={toggle} width='30px' />
+            <Collapse className="justify-content-end" isOpen={isOpen} navbar>
 
-                    <Nav navbar>
-                        <div className='d-sm-none ms-1 fs-5 text-primary'>
-                            <a href={`https://github.com/${user}`}>{user}</a>
-                            <span>/</span>
-                            <a href={`https://github.com/${user}/${repo}`}>{repo}</a>
-                        </div>
-                        {routes.map(item => (
-                            <NavItem key={item.path}>
+                <Nav navbar>
+                    <div className='d-sm-none ms-1 fs-5 text-primary'>
+                        <a href={`https://github.com/${user}`}>{user}</a>
+                        <span>/</span>
+                        <a href={`https://github.com/${user}/${repo}`}>{repo}</a>
+                    </div>
+                    {routes.map(item => (
+                        <NavItem key={item.path}>
 
-                                <CustomNavLink to={item.path}>
-                                    <div className='d-block d-md-inline-block mx-1 btn btn-outline-primary'>{item.main}</div>
-                                </CustomNavLink>
+                            <CustomNavLink to={item.path}>
+                                <div className='d-block d-md-inline-block mx-1 btn btn-outline-primary'>{item.main}</div>
+                            </CustomNavLink>
 
-                            </NavItem>
-                        ))}
+                        </NavItem>
+                    ))}
 
-                    </Nav>
+                </Nav>
 
-                </Collapse>
-            </TransparentNavbar>
-        </div>
+            </Collapse>
+        </TransparentNavbar>
     );
 }
 
