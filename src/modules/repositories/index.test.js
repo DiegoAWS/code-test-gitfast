@@ -2,18 +2,18 @@ import React from 'react';
 
 import { screen } from '@testing-library/react';
 import { customRender } from '../../setupTests';
-import Commits from '.';
+import Repositories from '.';
 import loadingIcon from '../../assets/imgs/loadingIcon.gif'
-import { mockCommits } from '../../constants/test-mock-data/mockCommits'
+import { mockRepositories } from '../../constants/test-mock-data/mockRepositories'
 
-describe('Commits test', () => {
+describe('Repositories test', () => {
 
 
     it('Render Loading State', () => {
-        customRender(<Commits />, {
+        customRender(<Repositories />, {
             initialState: {
-                commits: {
-                    commits: [],
+                repositories: {
+                    repositories: [],
                     loading: true,
                     errors: false,
                     links: ''
@@ -27,11 +27,11 @@ describe('Commits test', () => {
     })
 
 
-    it('Render Commits Rendered', () => {
-        customRender(<Commits />, {
+    it('Render Repositories Rendered', () => {
+        customRender(<Repositories />, {
             initialState: {
-                commits: {
-                    commits: mockCommits,
+                repositories: {
+                    repositories: mockRepositories,
                     loading: false,
                     errors: false,
                     links: ''
