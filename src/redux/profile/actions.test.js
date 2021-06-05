@@ -1,6 +1,6 @@
 import { errorFetchingProfile, getProfile, saveFetchedProfile } from "./actions";
 import { GET_PROFILE_FAILED, GET_PROFILE_REQUEST, GET_PROFILE_SUCCESS } from "./types";
-import mockProfile from '../../constants/test-mock-data/mockProfile'
+import { mockProfile } from '../../constants/test-mock-data/mockProfile'
 
 
 // Tests
