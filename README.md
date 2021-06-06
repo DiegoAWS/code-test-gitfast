@@ -9,10 +9,17 @@
 - [Further recomendations](#further-recomendations)
 - [Deployed Project](#deployed-project)
 - [Runing the project locally](#runing-the-project-locally)
+- [Testing](#testing)
 
-<img alt="Landing Background" src="src/assets/imgs/landingBackgroundReadme.png" width="100%" style="border:1px solid white;"/>
+## You can see the live project at [this firebase hosting.](https://code-test-gitfast.web.app/)
 
-<img alt="Landing Background" src="src/assets/imgs/test_process.gif" width="100%" style="border:1px solid white;"/>
+[<img alt="Landing Background" src="src/assets/imgs/landingBackgroundReadme.gif" width="100%" />](https://code-test-gitfast.web.app/)
+
+## Test Proccess running, follow instructions [here](#testing)
+
+[<img alt="Landing Background" src="src/assets/imgs/test_process.gif" width="100%"/>](#testing)
+
+[<img alt="Go to Up icon" align="right" src="src/assets/imgs/goUpIcon.svg" width="20px" />](#readme)
 
 ## Problem to solve:
 
@@ -125,7 +132,9 @@ npm start
 
 You will see the project in a browser at http://localhost:3000/
 
-Test are availables with [Jest testing Framework](https://jestjs.io/). To run this test pleas run
+## Testing
+
+Test are availables with [Jest testing Framework](https://jestjs.io/). After running [commands above](#runing-the-project-locally), please run in the project directory:
 
 ```
 npm test
