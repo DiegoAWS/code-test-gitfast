@@ -1,8 +1,6 @@
 
 import React, { useState } from 'react'
 import formatDistance from 'date-fns/formatDistance'
-import isValid from 'date-fns/isValid';
-import format from 'date-fns/format';
 import gitHubLogo from '../../assets/imgs/gitHubLogo.svg'
 import clipboardIcon from '../../assets/imgs/clipboardIcon.svg'
 import { Button, ButtonGroup } from 'reactstrap';
@@ -21,10 +19,9 @@ export default function OneCommit({ commit }) {
     const authorProfile = commit?.author?.html_url
     const authorProfilePict = commit?.author?.avatar_url
 
-    const commitDate = isValid(new Date(commit?.commit?.author?.date))
-        ? new Date(commit?.commit?.author?.date) : new Date()
+    const commitDate = new Date(commit?.commit?.author?.date)
 
-    const timeDistance = 'Commited ' + formatDistance(commitDate, new Date()) + ' ago - ' + format(commitDate, 'PPpp')
+    const timeDistance = 'Commited ' + formatDistance(commitDate, new Date()) + ' ago'
 
 
 
@@ -65,10 +62,10 @@ export default function OneCommit({ commit }) {
                     <a href={authorProfile}><img alt='' src={authorProfilePict || gitHubLogo} className='rounded-circle bg-primary' width='25px' height='25px' />
                     </a>
 
-                    <div className='ms-2' id='toolTipTarget'>{timeDistance}</div>
+                    <div className='ms-2 text-secondary fs-6' id='toolTipTarget'>{timeDistance}</div>
                 </div>
             </div>
-            <div className='d-flex align-items-center'>
+            <div className='d-flex align-items-center flex-wrap flex-sm-nowrap'>
                 {verifiedCommit && <div className='rounded-pill border border-success text-success px-1 '> Verified</div>}
                 <ButtonGroup className='ms-2' size="sm">
                     <Button className='bg-dark text-primary' onClick={copyShaToClipboard}>
