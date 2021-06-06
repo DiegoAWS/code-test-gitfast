@@ -11,11 +11,11 @@
 - [Runing the project locally](#runing-the-project-locally)
 - [Testing](#testing)
 
-## You can see the live project at [this firebase hosting.](https://code-test-gitfast.web.app/)
+You can see the live project at [this firebase hosting.](https://code-test-gitfast.web.app/)
 
 [<img alt="Landing Background" src="src/assets/imgs/landingBackgroundReadme.gif" width="100%" />](https://code-test-gitfast.web.app/)
 
-## Test Proccess running, follow instructions [here](#testing)
+Test running proccess, to reproduce test locally follow instructions [here](#testing)
 
 [<img alt="Landing Background" src="src/assets/imgs/test_process.gif" width="100%"/>](#testing)
 
@@ -31,12 +31,16 @@ You will need to sign up for a free GitHub account if you do not already have on
 
 Please make sure that you use React and Redux.
 
+[<img alt="Go to Up icon" align="right" src="src/assets/imgs/goUpIcon.svg" width="20px" />](#readme)
+
 ### Requirements
 
 You must use the GitHub API - while you could make a scraper or devise another method to get the git commit history of your project, we would like to see how you work with an existing API.
 Your GitHub repository must be public - this will allow us to look at it and verify the accuracy of your code. Once you complete this project, you will need to send over the link to your project to us with the email address provided below.
 
 The style of the page is up to you. Typically we use something like Bootstrap (http://getbootstrap.com) for a lot of our projects, then style it to meet the business want or need later on.
+
+[<img alt="Go to Up icon" align="right" src="src/assets/imgs/goUpIcon.svg" width="20px" />](#readme)
 
 ### Routes
 
@@ -46,6 +50,8 @@ The style of the page is up to you. Typically we use something like Bootstrap (h
 
 You MUST provide instructions in the README on how to install and run your project. We will not infer anything, and if you do not include these instructions, we will reject your submission.
 When you are finished please email me with a link to the repo. If you have any questions let me know.
+
+[<img alt="Go to Up icon" align="right" src="src/assets/imgs/goUpIcon.svg" width="20px" />](#readme)
 
 ## Further recomendations
 
@@ -65,7 +71,7 @@ When you are finished please email me with a link to the repo. If you have any q
 
 8. Change the use of redux connect to react hoooks (useselector usedispatch)
 
-9. Improve the readme to describe what that repository does and how it can be deployed from scratch.
+9. Improve the readme) to describe what that repository does and how it can be deployed from scratch.
 
 10. Use a pattern for the redux state something like state: {data, loding, error}
 
@@ -76,10 +82,14 @@ When you are finished please email me with a link to the repo. If you have any q
 13. Regarding the use of git, each task must be in a separate branch, each functionality of the task one or more commits, it is never directly uploaded to master, a PR of a tested branch is made, it must be used as a minimum master dev and the branches of each functionality, it is first mixed with dev and it is tested again and in the end it is passed to master.
     <br> <br><br>
 
+[<img alt="Go to Up icon" align="right" src="src/assets/imgs/goUpIcon.svg" width="20px" />](#readme)
+
 ## Deployed Project
 
 To see this project you could visit https://code-test-gitfast.web.app/ or you could clone it and run it locally.
 <br> <br><br>
+
+[<img alt="Go to Up icon" align="right" src="src/assets/imgs/goUpIcon.svg" width="20px" />](#readme)
 
 ## Runing the project locally
 
@@ -131,6 +141,8 @@ npm start
 ```
 
 You will see the project in a browser at http://localhost:3000/
+
+[<img alt="Go to Up icon" align="right" src="src/assets/imgs/goUpIcon.svg" width="20px" />](#readme)
 
 ## Testing
 
