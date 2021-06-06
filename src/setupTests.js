@@ -35,3 +35,21 @@ function customRender(
 export * from '@testing-library/react'
 // override render method
 export { customRender }
+
+
+
+global.IntersectionObserver = class IntersectionObserver {
+
+
+    observe() {
+        return null;
+    }
+
+    disconnect() {
+        return null;
+    };
+
+    unobserve() {
+        return null;
+    }
+};

@@ -6,12 +6,12 @@ export const mockCommits = [
             "author": {
                 "name": "Diego Escobar",
                 "email": "diego.netsolutions@gmail.com",
-                "date": "2021-06-03T10:10:45Z"
+                "date": "2021-06-03T10:10:45"
             },
             "committer": {
                 "name": "GitHub",
                 "email": "noreply@github.com",
-                "date": "2021-06-03T10:10:45Z"
+                "date": "2021-06-03T10:10:45"
             },
             "message": "TESTING TEXT PRESENT",
             "tree": {
