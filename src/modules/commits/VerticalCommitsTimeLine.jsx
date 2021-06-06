@@ -8,14 +8,15 @@ import { groupCommitsByDate } from '../../helpers/groupCommitsByDate'
 import styled from 'styled-components'
 
 const VerticalTimelineWrapper = styled.div`
-    .vertical-timeline::before { // Vertical Line element in <VerticalTimeline/>
-        width:1px;
-        left:20px;        
-    }
-    .vertical-timeline{
-        padding:0px;
-    }
-margin-top:1rem;
+        .vertical-timeline::before { // Vertical Line element in <VerticalTimeline/>
+            width:1px;
+            left:20px;        
+        }
+        .vertical-timeline{
+            padding:0px;
+            padding-top:1rem;
+        }
+    margin-top:1rem;
 `
 
 export default function VerticalCommitsTimeLine({ commitList }) {
@@ -37,8 +38,7 @@ export default function VerticalCommitsTimeLine({ commitList }) {
                             display: 'flex',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            height: '20px',
-                            marginTop: '1rem'
+                            height: '20px'
                         }}
                         icon={<img alt='' src={commitIcon} width='20px' height='20px' />}
                     >

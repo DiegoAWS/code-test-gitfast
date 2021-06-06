@@ -13,7 +13,7 @@ const toDate = (input) => new Date(input)
 
 export const getDateFromCommit = composeFp
     (
-        format('yyyy-M-dd'),
+        format('yyyy-MM-dd'),
         toDate,
         path(['commit', 'author', 'date'])
     )

@@ -6,6 +6,7 @@ import clipboardIcon from '../../assets/imgs/clipboardIcon.svg'
 import { Button, ButtonGroup } from 'reactstrap';
 import copy from "copy-to-clipboard";
 import { toast } from 'react-toastify';
+import { format } from 'date-fns';
 
 export default function OneCommit({ commit }) {
     const [openCollapse, setOpenCollapse] = useState(false);
@@ -21,7 +22,7 @@ export default function OneCommit({ commit }) {
 
     const commitDate = new Date(commit?.commit?.author?.date)
 
-    const timeDistance = 'Commited ' + formatDistance(commitDate, new Date()) + ' ago'
+    const timeDistance = 'Commited ' + formatDistance(commitDate, new Date()) + ' ago at ' + format(commitDate, 'h:mm aaa')
 
 
 
