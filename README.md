@@ -71,7 +71,7 @@ When you are finished please email me with a link to the repo. If you have any q
 
 8. Change the use of redux connect to react hoooks (useselector usedispatch)
 
-9. Improve the readme) to describe what that repository does and how it can be deployed from scratch.
+9. Improve the readme to describe what that repository does and how it can be deployed from scratch.
 
 10. Use a pattern for the redux state something like state: {data, loding, error}
 
@@ -102,7 +102,7 @@ Before start make sure you have installed this tools:
 - [NPM](https://www.npmjs.com/) – Usually comes with Node.
 - [Git](https://git-scm.com/) – Git CLI.
 
-To make sure ou have this tool installed please open a terminal and type:
+To make sure you have this tool installed please open a terminal and type:
 
 ```
 node --version
