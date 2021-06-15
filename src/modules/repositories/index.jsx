@@ -16,10 +16,10 @@ const clearText = (dirtyText) => {
 
 export default function Repositories() {
     const [page, setPage] = useState(1)
-    const [searchingText, setSearchingText] = useState('DiegoCuba')
+    const [searchingText, setSearchingText] = useState('DiegoAWS')
     const [typeSearch, setTypeSearch] = useState('owner')
     const [sortSearch, setSortSearch] = useState('full_name')
-    const [userNameInput, setUserNameInput] = useState('DiegoCuba')
+    const [userNameInput, setUserNameInput] = useState('DiegoAWS')
 
 
 
