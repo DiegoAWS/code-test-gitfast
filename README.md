@@ -1,4 +1,4 @@
-# Test Code Project for GitFast [![example workflow](https://github.com/DiegoCuba/code-test-gitfast/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://code-test-gitfast.web.app/) [![GitHub last commit](https://img.shields.io/github/last-commit/DiegoCuba/code-test-gitfast.svg?style=flat)](https://GitHub.com/DiegoCuba/code-test-gitfast)
+# Test Code Project for GitFast [![example workflow](https://github.com/DiegoAWS/code-test-gitfast/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://code-test-gitfast.web.app/) [![GitHub last commit](https://img.shields.io/github/last-commit/DiegoAWS/code-test-gitfast.svg?style=flat)](https://GitHub.com/DiegoAWS/code-test-gitfast)
 
 ## Structure
 
@@ -134,7 +134,7 @@ git version 2.20.1
 Once you have installed `node` `npm` and `git` you can download/install this project:
 
 ```
-git clone https://github.com/DiegoCuba/code-test-gitfast.git
+git clone https://github.com/DiegoAWS/code-test-gitfast.git
 cd code-test-gitfast
 npm install
 npm start

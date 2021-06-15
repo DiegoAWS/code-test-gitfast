@@ -1,25 +1,25 @@
-import { toast } from 'react-toastify'
-import { SET_NEW_REPO_USER } from './types'
+import { toast } from "react-toastify";
+import { SET_NEW_REPO_USER } from "./types";
 
 export const initialRepoState = {
-    repo: 'code-test-gitfast',
-    user: 'DiegoCuba',
-
-}
+  repo: "code-test-gitfast",
+  user: "DiegoAWS",
+};
 
 const repoReducer = (state = initialRepoState, action) => {
+  switch (action.type) {
+    case SET_NEW_REPO_USER:
+      toast.success(
+        `Set successfully: ${action.payload.user}/${action.payload.repo}`
+      );
+      return {
+        repo: action.payload.repo,
+        user: action.payload.user,
+      };
 
-    switch (action.type) {
-        case SET_NEW_REPO_USER:
-            toast.success(`Set successfully: ${action.payload.user}/${action.payload.repo}`)
-            return {
-                repo: action.payload.repo,
-                user: action.payload.user
-            }
+    default:
+      return state;
+  }
+};
 
-        default:
-            return state
-    }
-}
-
-export default repoReducer
+export default repoReducer;
