@@ -51,7 +51,7 @@ const NavbarComponent = () => {
 
     return (
         <TransparentNavbar color="dark" expand="md">
-            <NavbarBrand className='d-flex' href="https://github.com/DiegoCuba/code-test-gitfast#readme">
+            <NavbarBrand className='d-flex' href="https://github.com/DiegoAWS/code-test-gitfast#readme">
                 <GitHubLogo src={gitHubLogo} alt='GitHubLogo' title='GitHub Code' />
             </NavbarBrand>
             <div className='d-none d-sm-block ms-1 fs-5 text-primary'>
