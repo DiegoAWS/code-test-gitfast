@@ -1,4 +1,5 @@
-# Test Code Project for GitFast [![example workflow](https://github.com/DiegoAWS/code-test-gitfast/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://code-test-gitfast.web.app/) [![GitHub last commit](https://img.shields.io/github/last-commit/DiegoAWS/code-test-gitfast.svg?style=flat)](https://GitHub.com/DiegoAWS/code-test-gitfast)
+# Test Code Project for GitFast [preview](https://code-test-gitfast.web.app/) 
+[![GitHub last commit](https://img.shields.io/github/last-commit/DiegoAWS/code-test-gitfast.svg?style=flat)](https://GitHub.com/DiegoAWS/code-test-gitfast)
 
 ## Structure
 
