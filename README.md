@@ -1,4 +1,5 @@
-# Test Code Project for GitFast [preview](https://code-test-gitfast.web.app/) 
+# Test Code Project for GitFast
+
 [![GitHub last commit](https://img.shields.io/github/last-commit/DiegoAWS/code-test-gitfast.svg?style=flat)](https://GitHub.com/DiegoAWS/code-test-gitfast)
 
 ## Structure
@@ -12,9 +13,7 @@
 - [Runing the project locally](#runing-the-project-locally)
 - [Testing](#testing)
 
-You can see the live project at [this firebase hosting.](https://code-test-gitfast.web.app/)
-
-[<img alt="Landing Background" src="src/assets/imgs/landingBackgroundReadme.gif" width="100%" />](https://code-test-gitfast.web.app/)
+<img alt="Landing Background" src="src/assets/imgs/landingBackgroundReadme.gif" width="100%" />
 
 Test running proccess, to reproduce test locally follow instructions [here](#testing)
 
@@ -22,13 +21,13 @@ Test running proccess, to reproduce test locally follow instructions [here](#tes
 
 [<img alt="Go to Up icon" align="right" src="src/assets/imgs/goUpIcon.svg" width="20px" />](#readme)
 
-## Problem to solve:
+## Problem to solve
 
 ### Objective
 
 The goal of this project will be to create a web application that shows git commit history for the project you're working on (looks a lot like recursion, huh?). You need to make many well-stated commits while working on this project and regularly push them up.
 
-You will need to sign up for a free GitHub account if you do not already have one, then create a public repository to store your work so that we will be able to see and review it. You can find documentation on the GitHub API here: https://developer.github.com/v3/.
+You will need to sign up for a free GitHub account if you do not already have one, then create a public repository to store your work so that we will be able to see and review it. You can find documentation on the GitHub API here: <https://developer.github.com/v3/>.
 
 Please make sure that you use React and Redux.
 
@@ -39,7 +38,7 @@ Please make sure that you use React and Redux.
 You must use the GitHub API - while you could make a scraper or devise another method to get the git commit history of your project, we would like to see how you work with an existing API.
 Your GitHub repository must be public - this will allow us to look at it and verify the accuracy of your code. Once you complete this project, you will need to send over the link to your project to us with the email address provided below.
 
-The style of the page is up to you. Typically we use something like Bootstrap (http://getbootstrap.com) for a lot of our projects, then style it to meet the business want or need later on.
+The style of the page is up to you. Typically we use something like Bootstrap (<http://getbootstrap.com>) for a lot of our projects, then style it to meet the business want or need later on.
 
 [<img alt="Go to Up icon" align="right" src="src/assets/imgs/goUpIcon.svg" width="20px" />](#readme)
 
@@ -87,7 +86,7 @@ When you are finished please email me with a link to the repo. If you have any q
 
 ## Deployed Project
 
-To see this project you could visit https://code-test-gitfast.web.app/ or you could clone it and run it locally.
+To see this project you could visit <https://code-test-gitfast.web.app/> or you could clone it and run it locally.
 <br> <br><br>
 
 [<img alt="Go to Up icon" align="right" src="src/assets/imgs/goUpIcon.svg" width="20px" />](#readme)
@@ -99,49 +98,18 @@ To see this project you could visit https://code-test-gitfast.web.app/ or you co
 
 Before start make sure you have installed this tools:
 
-- [Node JS](https://nodejs.org/en/) – LTS version or newer.
+- [Node JS](https://nodejs.org/en/) – version 14.
 - [NPM](https://www.npmjs.com/) – Usually comes with Node.
 - [Git](https://git-scm.com/) – Git CLI.
 
-To make sure you have this tool installed please open a terminal and type:
-
-```
-node --version
-```
-
-```
-npm --version
-```
-
-and
-
-```
-git --version
-```
-
-expecting something similar to (o newer versions):
-
 ```sh
-node --version
-v14.17.0
-
-npm --version
-6.14.13
-
-git version
-git version 2.20.1
-```
-
-Once you have installed `node` `npm` and `git` you can download/install this project:
-
-```
 git clone https://github.com/DiegoAWS/code-test-gitfast.git
 cd code-test-gitfast
 npm install
 npm start
 ```
 
-You will see the project in a browser at http://localhost:3000/
+You will see the project in a browser at <http://localhost:3000/>
 
 [<img alt="Go to Up icon" align="right" src="src/assets/imgs/goUpIcon.svg" width="20px" />](#readme)
 
@@ -149,6 +117,6 @@ You will see the project in a browser at http://localhost:3000/
 
 Test are availables with [Jest testing Framework](https://jestjs.io/). After running [commands above](#runing-the-project-locally), please run in the project directory:
 
-```
+```sh
 npm test
 ```
